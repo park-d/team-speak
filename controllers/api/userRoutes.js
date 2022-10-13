@@ -12,7 +12,6 @@ router.post('/signup', async (req, res) => {
         });
         if(!teamData) {
             res.redirect('/signup');
-            alert('Please enter a correct Team or Company Name.');
             // alert for wrong company or team name entered
         } else {
             const userData = await User.create({
