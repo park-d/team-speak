@@ -1,15 +1,15 @@
 const router = require('express').Router();
 const {User, Company, Team} = require('../../models');
-const {op} = require(sequelize);
+const {Op} = require("sequelize");
 
 
 router.post('/signup', async (req, res) => {
     try {
         const teamData = await Team.findOne({
             where: {
-                team_name: {[op.like]: req.body.team_name}
+                team_name: {[Op.like]: `%${req.body.team_name}%`}
             }
-        })
+        });
         if(!teamData) {
             res.redirect('/signup');
             alert('Please enter a correct Team or Company Name.');
@@ -21,7 +21,7 @@ router.post('/signup', async (req, res) => {
                 password: req.body.password,
                 team_id: teamData.team_id
             });
-
+console.log(userData)
             // in order to stay logged in, need to make a session with loggedIn info and on the user
             req.session.save(() => {
                 req.session.user_id = userData.id;
@@ -37,40 +37,28 @@ router.post('/signup', async (req, res) => {
     }
 });
 
-/**
- * when aadding a new user we allow them to input their team name->how do we handle this?
- * front end makes a post request to some route
- * req.body => {..., team_name: "Bologna"},
- * operators in sequelize google it.
- * const {op} = require(sequelize);
- * db.Team.findOne({where: 
- *  {team_name:
- *      {[op.like]: req.body.team_name}
- * }}) => the data about that team
- * if (!team) {
- * alert and refresh
- * } else there is a team and now we know its id
- * 
- * so now we know the user name and password and team id and email
- * db,User.create(dataBundledNeatly)
- * 
- */
+router.post('/register', async (req, res) => {
+    try {
+        const companyInsertedSuccessfully = await Company.create(
+            {company_name: req.body.company_name}
+        );
+        const organizedTeamArray = req.body.team_names.map(teamName => {
+            return {
+                company_id: companyInsertedSuccessfully.company_id,
+                team_name: teamName
+            };
+        });
+        console.log(organizedTeamArray);
+        Team.bulkCreate(organizedTeamArray);
+        res.json('We did it');
+    } catch(err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
 
 module.exports = router;
 
 
 
-/**
- * 
- * so a post request to the add team route has been made
- * req.body => {company_name: "Bob's Burgers", team_names: ["Winners", "Tacos", "Burritos"]}
- * server receives this
- * const companyInsertedSuccessfully = await db.Company.insert({company_name: req.body.company_name})
- * 
-        const companyData = await Company.create({
-            company_name: req.body.
-        })
- * const allTeams = req.body.team_names.map(team_name => {company_id:companyInsertedSuccessfully.company_id, team_name: team_name})
- * db.Team.bulkCreate(allTeams)
- * 
- */
+

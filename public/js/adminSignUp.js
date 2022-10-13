@@ -1,4 +1,4 @@
-const signupBtn = $('#company-signup-button');
+const registerBtn = $('#company-signup-button');
 
 // a function that will handle signing in the user
 const registerFormHandler = async (event) => {
@@ -12,7 +12,7 @@ const registerFormHandler = async (event) => {
     };
     // we need to fetch data from the api and make a post request when we click on the signup button
     if(company_name && team_names) {
-        const response = await fetch('/api/users', {
+        const response = await fetch('/api/users/register', {
             method: 'POST',
             body: JSON.stringify({company_name, team_names}),
             headers: {'Content-Type': 'application/json'},
@@ -26,4 +26,4 @@ const registerFormHandler = async (event) => {
     }
 };
 
-signupBtn.click(registerFormHandler);
+registerBtn.click(registerFormHandler);
