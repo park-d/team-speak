@@ -11,6 +11,9 @@ News.init(
             primaryKey: true,
             autoIncrement: true,
         },
+        headline: {
+            type: DataTypes.TEXT,
+        },
         category: {
             type: DataTypes.STRING,
         },
