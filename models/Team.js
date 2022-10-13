@@ -1,10 +1,6 @@
 const {Model, DataTypes} = require('sequelize');
 const sequelize = require('../config/connection');
 
-
-module.exports = Team
-
-
 class Team extends Model {}
 
 Team.init(
@@ -35,3 +31,5 @@ Team.init(
         modelName: 'team',
     }
 );
+
+module.exports = Team;
