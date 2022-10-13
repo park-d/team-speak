@@ -10,7 +10,7 @@ const signupFormHandler = async (event) => {
     const password = $('#password-signup').val().trim();
     // we need to fetch data from the api and make a post request when we click on the signup button
     if(username && password) {
-        const response = await fetch('/api/users', {
+        const response = await fetch('/api/users/signup', {
             method: 'POST',
             body: JSON.stringify({username, email, password, team_name}),
             headers: {'Content-Type': 'application/json'},
