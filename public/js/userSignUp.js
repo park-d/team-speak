@@ -9,15 +9,15 @@ const signupFormHandler = async (event) => {
     const email = $('#email-signup').val().trim();
     const password = $('#password-signup').val().trim();
     // we need to fetch data from the api and make a post request when we click on the signup button
-    if(username && password) {
+    if (username && password) {
         const response = await fetch('/api/users/signup', {
             method: 'POST',
-            body: JSON.stringify({username, email, password, team_name}),
-            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ username, email, password, team_name }),
+            headers: { 'Content-Type': 'application/json' },
         });
         // if login is successful, bring the user to their dashboard page, otherwise alert to sign up error
-        if(response.ok) {
-            document.location.replace('/dashboard');
+        if (response.ok) {
+            document.location.replace('/userDashboard');
         } else {
             alert('Could not log in');
         }
