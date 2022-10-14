@@ -1,6 +1,7 @@
 const router = require('express').Router();
-const {User, Company, Team} = require('../../models');
+const {User, Company, Team, Preferences} = require('../../models');
 const {Op} = require("sequelize");
+const withAuth = require('../../utils/auth');
 
 // company register post route, insert entered data in company table first, then using that data, insert the rest of the team data into the team table.
 router.post('/register', async (req, res) => {
@@ -49,9 +50,16 @@ router.post('/signup', async (req, res) => {
                     password: req.body.password,
                     team_id: teamData.team_id
                 });
+
+                const userLoggedInData = await User.findOne({
+                    where: {
+                        email: userData.email
+                    }
+                });
                 // in order to stay logged in, need to make a session with loggedIn info and on the user
                 req.session.save(() => {
-                    req.session.user_id = userData.id;
+                    req.session.user_id = userLoggedInData.user_id;
+                    req.session.username = userLoggedInData.username;
                     req.session.loggedIn = true;
 
                     res.status(200).json(userData);
@@ -69,15 +77,14 @@ router.post('/login', async (req, res) => {
     try {
         const user = await User.findOne({
             where: {
-                email: req.body.email,
-                username: req.body.username
+                email: req.body.email
             },
         });
 
         if(!user) {
             res
                 .status(400)
-                .json({message: 'Incorrect username or password. Please try again!'});
+                .json({message: 'Incorrect email or password. Please try again!'});
             return;
         }
 
@@ -92,12 +99,31 @@ router.post('/login', async (req, res) => {
 
         req.session.save(() => {
             req.session.loggedIn = true;
+            req.session.user_id = user.user_id;
             req.session.username = user.username;
 
             res
                 .status(200)
                 .json({user: user, message: 'You are now logged in!'});
         });
+    } catch(err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
+router.post('/preferences', async (req, res) => {
+    try {
+        console.log(req.session.user_id);
+        const organizedPreferenceArray = req.body.user_preferences.map(preference => {
+            return {
+                category_id: parseInt(preference),
+                user_id: req.session.user_id,
+            };
+        });
+        console.log(organizedPreferenceArray);
+        Preferences.bulkCreate(organizedPreferenceArray);
+        res.json('Thank you for saving your preference!');
     } catch(err) {
         console.log(err);
         res.status(500).json(err);
