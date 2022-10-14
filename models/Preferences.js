@@ -19,7 +19,6 @@ class Preferences extends Model {}
             key: 'category_id',
             // unique: false
         },
-
       },
       user_id: {
         type: DataTypes.INTEGER,
