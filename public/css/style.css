@@ -1,0 +1,16 @@
+html {
+    background-color: #2D2B34;
+    color: #F5F5F5;
+}
+
+/* Color Functions */
+
+.theme-color {
+    background-color: #E1C45B;
+    color: #2D2B34;
+}
+
+.theme-color-border {
+    color: #E1C45B;
+}
+
