@@ -11,14 +11,14 @@ const registerFormHandler = async (event) => {
         team_names.push(teamObject.eq(index).val());
     };
     // we need to fetch data from the api and make a post request when we click on the signup button
-    if(company_name && team_names) {
+    if (company_name && team_names) {
         const response = await fetch('/api/users/register', {
             method: 'POST',
-            body: JSON.stringify({company_name, team_names}),
-            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ company_name, team_names }),
+            headers: { 'Content-Type': 'application/json' },
         });
         // if login is successful, bring the user to their dashboard page, otherwise alert to sign up error
-        if(response.ok) {
+        if (response.ok) {
             document.location.replace('/userDashboard');
         } else {
             alert('Please enter both Company and Team names');

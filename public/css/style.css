@@ -5,12 +5,15 @@ html {
 
 /* Color Functions */
 
-.theme-color {
-    background-color: #E1C45B;
-    color: #2D2B34;
+.delete-button {
+    width: 50px;
+    height: 50px;
 }
 
-.theme-color-border {
-    color: #E1C45B;
+ .home {
+    background-color: #fdf0d5ff; 
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;  
 }
-

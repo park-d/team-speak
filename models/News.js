@@ -22,8 +22,6 @@ News.init(
         },
         link: {
             type: DataTypes.TEXT,
-            defaultValue: DataTypes.NOW,
-            
         },
         short_description: {
             type: DataTypes.TEXT,
