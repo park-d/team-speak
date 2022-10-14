@@ -57,7 +57,8 @@ module.exports = {
     User,
     Preferences,
     Comment,
-    Post
+    Post,
+    Category,
 };
 
 

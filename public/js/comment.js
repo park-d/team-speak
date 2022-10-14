@@ -5,8 +5,8 @@ const newCommentBtn = $('#new-comment-btn');
 const commentFormHandler = async function (event) {
     event.preventDefault();
 
-    const post_id = document.querySelector('input[name="post-id"]').value;
-    const body = document.querySelector('textarea[name="comment-body"]').value;
+    const post_id = $('input[name="post-id"]').value;
+    const body = $('textarea[name="comment-body"]').value;
  // we need to fetch data from the api and make a post request when we click on the new post button
     if(body) {
         await fetch('/api/comment', {
