@@ -30,4 +30,9 @@ router.get('/register', (req, res) => {
     res.render('signup-admin');
 });
 
+// register get route, for companies, redirect the page to the homepage, if not, then render the sign-up page
+router.get('/userDashboard', (req, res) => {
+    res.render('userDashboard');
+});
+
 module.exports = router;
