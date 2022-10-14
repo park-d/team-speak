@@ -19,7 +19,7 @@ const registerFormHandler = async (event) => {
         });
         // if login is successful, bring the user to their dashboard page, otherwise alert to sign up error
         if(response.ok) {
-            document.location.replace('/dashboard');
+            document.location.replace('/userDashboard');
         } else {
             alert('Please enter both Company and Team names');
         }
