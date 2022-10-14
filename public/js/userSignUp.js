@@ -1,9 +1,10 @@
 const signupBtn = $('#signup-button');
 
-// a function that will handle signing in the user
+// a function that will handle signing a user up
 const signupFormHandler = async (event) => {
     event.preventDefault();
     // grabbing the data that is entered
+    const company_name = $('#user-company').val().trim();
     const team_name = $('#user-team').val().trim();
     const username = $('#username-signup').val().trim();
     const email = $('#email-signup').val().trim();
@@ -12,14 +13,14 @@ const signupFormHandler = async (event) => {
     if (username && password) {
         const response = await fetch('/api/users/signup', {
             method: 'POST',
-            body: JSON.stringify({ username, email, password, team_name }),
+            body: JSON.stringify({ username, email, password, team_name, company_name }),
             headers: { 'Content-Type': 'application/json' },
         });
-        // if login is successful, bring the user to their dashboard page, otherwise alert to sign up error
+        // if sign up is successful, bring the user to their dashboard page, otherwise alert to sign up error
         if (response.ok) {
             document.location.replace('/userDashboard');
         } else {
-            alert('Could not log in');
+            alert('Sign-up failed, please try again.');
         }
     }
 };
