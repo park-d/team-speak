@@ -11,12 +11,14 @@ teamListEl.on('change', () => {
 });
 
 
+
+
 addTeamBtn.on('click', (e) => {
     e.preventDefault();
     console.log('clicked');
 
     $('#team-list').append(
-        '<input type="text" placeholder=".medium-6.cell" class="form-input company-team-signup">'
+        '<input type="text" placeholder="Team Name" class="form-input company-team-signup">\n<div class="delete-team"><img class="delete-button" src="./images/icons8-cancel-100.png"/></div>'
     );
 
 
