@@ -28,123 +28,120 @@
 <h3>
   Browse your News for the Day!
 </h3>
-<div class="grid x">
-  <div class="card cell medium-4" style="width: 500px">
-    <div class="card-divider">
-      <h3 href="{{article.article.link}}">
-        <a>
-          Article Title Here
-        </a>
-      </h3>
-      <p><button class="button" data-open="postModal">Create a Post!</button></p>
+<div class="grid-x">
+    <div class="card column medium-10 cell">
+      <div class="card-divider">
+        <h3 href="{{article.article.link}}">
+          <a>
+            Article Title Here
+          </a>
+        </h3>
+        <button data-open="postModal">
+          <i class="fa-solid fa-square-plus custom-plus"></i>
+        </button>
+      </div>
+      <div class="card-section">
+        <h4>Short Description Here</h4>
+      </div>
+      <div class="reveal" id="postModal" data-reveal>
+        <form>
+          <h4> example article title
+            {{article.article.title}} </h4>
+          <input type="text" placeholder="Enter your post here" class="form-input" id="post-input" required>
+          <a href="/teamDashboard" class="submit">Submit Post!</a>
+        </form>
+      </div>
     </div>
-    <div class="card-section">
-      <h4>Link to Article Here</h4>
+    <div class="card column medium-10">
+      <div class="card-divider">
+        <h3 href="{{article.article.link}}">
+          <a>
+            Article Title Here
+          </a>
+        </h3>
+        <button data-open="postModal">
+          <i class="fa-solid fa-square-plus custom-plus"></i>
+        </button>
+      </div>
+      <div class="card-section">
+        <h4>Short Description Here</h4>
+      </div>
+      <div class="reveal" id="postModal" data-reveal>
+        <form>
+          <h4> example article title
+            {{article.article.title}} </h4>
+          <input type="text" placeholder="Enter your post here" class="form-input" id="post-input" required>
+          <a href="/teamDashboard" class="submit">Submit Post!</a>
+        </form>
+      </div>
     </div>
-    <div class="card-section">
-      <h4>Short Description Here</h4>
+    <div class="card column medium-10">
+      <div class="card-divider">
+        <h3 href="{{article.article.link}}">
+          <a>
+            Article Title Here
+          </a>
+        </h3>
+        <button data-open="postModal">
+          <i class="fa-solid fa-square-plus custom-plus"></i>
+        </button>
+      </div>
+      <div class="card-section">
+        <h4>Short Description Here</h4>
+      </div>
+      <div class="reveal" id="postModal" data-reveal>
+        <form>
+          <h4> example article title
+            {{article.article.headline}} </h4>
+          <input type="text" placeholder="Enter your post here" class="form-input" id="post-input" required>
+          <a href="/teamDashboard" class="submit">Submit Post!</a>
+        </form>
+      </div>
     </div>
-    <div class="reveal" id="postModal" data-reveal>
-      <form>
-        <input type="text" placeholder="Enter your post here" class="form-input" id="post-input" required>
-        <button href="/teamDashboard">Submit Post!</button>
-        <!-- <button class="close-button" data-close aria-label="Close modal" type="button"> -->
-      </form>
+    <div class="card column medium-10">
+      <div class="card-divider">
+        <h3 href="{{article.article.link}}">
+          <a>
+            Article Title Here
+          </a>
+        </h3>
+        <button data-open="postModal">
+          <i class="fa-solid fa-square-plus custom-plus"></i>
+        </button>
+      </div>
+      <div class="card-section">
+        <h4>Short Description Here</h4>
+      </div>
+      <div class="reveal" id="postModal" data-reveal>
+        <form>
+          <h4> example article title
+            {{article.article.title}} </h4>
+          <input type="text" placeholder="Enter your post here" class="form-input" id="post-input" required>
+          <a href="/teamDashboard" class="submit">Submit Post!</a>
+        </form>
+      </div>
     </div>
-  </div>
-  <div class="card cell medium-4" style="width: 500px">
-    <div class="card-divider">
-      <h3 href="{{article.article.link}}">
-        <a>
-          Article Title Here
-        </a>
-      </h3>
-      <p><button class="button" data-open="postModal">Create a Post!</button></p>
+    <div class="card column medium-10">
+      <div class="card-divider">
+        <h3 href="{{article.article.link}}">
+          <a>
+            Article Title Here
+          </a>
+        </h3>
+        <button data-open="postModal">
+          <i class="fa-solid fa-square-plus custom-plus"></i>
+        </button>
+      </div>
+      <div class="card-section">
+        <h4>Short Description Here</h4>
+      </div>
+      <div class="reveal" id="postModal" data-reveal>
+        <form>
+          <h4> example article title
+            {{article.article.title}} </h4>
+          <input type="text" placeholder="Enter your post here" class="form-input" id="post-input" required>
+          <a href="/teamDashboard" class="submit">Submit Post!</a>
+        </form>
+      </div>
     </div>
-    <div class="card-section">
-      <h4>Link to Article Here</h4>
-    </div>
-    <div class="card-section">
-      <h4>Short Description Here</h4>
-    </div>
-    <div class="reveal" id="postModal" data-reveal>
-      <form>
-        <input type="text" placeholder="Enter your post here" class="form-input" id="post-input" required>
-        <button href="/teamDashboard">Submit Post!</button>
-        <!-- <button class="close-button" data-close aria-label="Close modal" type="button"> -->
-      </form>
-    </div>
-  </div>
-  <div class="card cell medium-4" style="width: 500px">
-    <div class="card-divider">
-      <h3 href="{{article.article.link}}">
-        <a>
-          Article Title Here
-        </a>
-      </h3>
-      <p><button class="button" data-open="postModal">Create a Post!</button></p>
-    </div>
-    <div class="card-section">
-      <h4>Link to Article Here</h4>
-    </div>
-    <div class="card-section">
-      <h4>Short Description Here</h4>
-    </div>
-    <div class="reveal" id="postModal" data-reveal>
-      <form>
-        <input type="text" placeholder="Enter your post here" class="form-input" id="post-input" required>
-        <!-- <button class="close-button" data-close aria-label="Close modal" type="button"> -->
-          <button href="/teamDashboard">Submit Post!</button>
-      </form>
-    </div>
-  </div>
-  <div class="card cell medium-4" style="width: 500px">
-    <div class="card-divider">
-      <h3 href="{{article.article.link}}">
-        <a>
-          Article Title Here
-        </a>
-      </h3>
-      <p><button class="button" data-open="postModal">Create a Post!</button></p>
-    </div>
-    <div class="card-section">
-      <h4>Link to Article Here</h4>
-    </div>
-    <div class="card-section">
-      <h4>Short Description Here</h4>
-    </div>
-    <div class="reveal" id="postModal" data-reveal>
-      <form>
-        <input type="text" placeholder="Enter your post here" class="form-input" id="post-input" required>
-        <button href="/teamDashboard">Submit Post!</button>
-        <!-- <button class="close-button" data-close aria-label="Close modal" type="button"> -->
-      </form>
-    </div>
-  </div>
-  <div class="card cell medium-4" style="width: 500px">
-    <div class="card-divider">
-      <h3 href="{{article.article.link}}">
-        <a>
-          Article Title Here
-        </a>
-      </h3>
-      <p><button class="button" data-open="postModal">Create a Post!</button></p>
-    </div>
-    <div class="card-section">
-      <h4>Link to Article Here</h4>
-    </div>
-    <div class="card-section">
-      <h4>Short Description Here</h4>
-    </div>
-    <div class="reveal" id="postModal" data-reveal>
-      <form>
-        <input type="text" placeholder="Enter your post here" class="form-input" id="post-input" required>
-        <button href="/teamDashboard">Submit Post!</button>
-        <!-- <button class="close-button" data-close aria-label="Close modal" type="button"> -->
-      </form>
-    </div>
-  </div>
 </div>
-
-
-
