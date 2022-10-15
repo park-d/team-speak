@@ -40,6 +40,10 @@ router.get('/teamDashboard', (req, res) => {
     res.render('teamDashboard');
 });
 
+router.get('/comments', (req, res) => {
+    res.render('comments');
+});
+
 
 
 module.exports = router;
