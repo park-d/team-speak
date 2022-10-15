@@ -19,10 +19,28 @@ Post.init(
             type: DataTypes.TEXT,
             allowNull: false
         },
+        team_id: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            references: {
+                model: 'user',
+                key: 'team_id',
+                // unique: false
+            },
+        },
+        user_id: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            references: {
+                model: 'user',
+                key: 'user_id',
+                // unique: false
+            },
+        }
     },
     {
         sequelize,
-        timestamps: false,
+        timestamps: true,
         freezeTableName: true,
         underscored: true,
         modelName: 'post',

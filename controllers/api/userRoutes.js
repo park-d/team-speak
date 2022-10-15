@@ -58,9 +58,10 @@ router.post('/signup', async (req, res) => {
                 });
                 // in order to stay logged in, need to make a session with loggedIn info and on the user
                 req.session.save(() => {
+                    req.session.loggedIn = true;
                     req.session.user_id = userLoggedInData.user_id;
                     req.session.username = userLoggedInData.username;
-                    req.session.loggedIn = true;
+                    req.session.team_id = userLoggedInData.team_id;
 
                     res.status(200).json(userData);
                 });
@@ -101,6 +102,7 @@ router.post('/login', async (req, res) => {
             req.session.loggedIn = true;
             req.session.user_id = user.user_id;
             req.session.username = user.username;
+            req.session.team_id = user.team_id;
 
             res
                 .status(200)
@@ -112,6 +114,17 @@ router.post('/login', async (req, res) => {
     }
 });
 
+// post route for user log out. destroying the active session if the user is logged in otherwise end
+router.post('/logout', (req, res) => {
+    if(req.session.loggedIn) {
+        req.session.destroy(() => {
+            res.status(204).end();
+        });
+    } else {
+        res.status(404).end();
+    }
+});
+        
 router.post('/preferences', async (req, res) => {
     try {
         console.log(req.session.user_id);

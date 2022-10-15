@@ -15,30 +15,35 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google Fonts (Rubik 300, 400, 600) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/style.css" type="text/css">
 </head>
 
 <body class="home">
     <div>
-        <header>
+        <header class="custom-header">
             <h1>
                 <a class="custom-title" href="/">TeamSpeak</a>
             </h1>
+            <ul class="menu">
+                <li><a href="/userDashboard">Your News</a></li>
+                <li><a href="/signup">Sign Up</a></li>
+                <li><a href="/register">Register</a></li>
+                <li><a href="/" id="logout-btn">Logout</a></li>
+            </ul>
         </header>
-
-        <body>
-            <main>
-                {{{ body }}}
-            </main>
-            <footer class="theme-color">
-                &copy; TeamSpeak 2022
-            </footer>
-        </body>
-
+        <main>
+            {{{ body }}}
+        </main>
+        <footer class="footer">
+            <p>&copy; TeamSpeak 2022</p>
+        </footer>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/js/foundation.min.js"
-        crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/js/foundation.min.js" crossorigin="anonymous">
     </script>
     <script>
         $(document).foundation();

@@ -6,15 +6,27 @@ html {
 /* Color Functions */
 
 .delete-button {
-    width: 50px;
-    height: 50px;
+    width: 10px;
+    height: 10px;
 }
 
- .home {
-    background-color: #fdf0d5ff; 
-    height: 100%;
+.custom-card {
+    box-shadow: 0px 12px 28px -7px rgba(0,0,0,0.75);
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.custom-card:hover {
+    transform: translateY(-0.5rem);
+    transition: 0.1s;
+    border: 3px solid var(--theme);
+    box-shadow: 0px 12px 28px -7px var(--off-theme);
+}
+
+.home {
+    background-color: var(--background);
+    height: 100vh;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;  
 }
-
