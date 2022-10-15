@@ -9,7 +9,7 @@ const Comment = require('./Comment');
 
 User.hasMany(Preferences,{
     foreignKey: 'user_id',
-    onDelete: 'CASCADE',
+    onDelete: 'CASCADE'
 })
 
 Preferences.belongsTo(User, { 
@@ -19,7 +19,7 @@ Preferences.belongsTo(User, {
 
 Company.hasMany(Team, {
     foreignKey: 'company_id',
-    onDelete: 'CASCADE',
+    onDelete: 'CASCADE'
 })
 
 Team.belongsTo(Company, {
@@ -28,16 +28,20 @@ Team.belongsTo(Company, {
 
 Team.hasMany(User, {
     foreignKey: 'team_id',
-    onDelete: 'CASCADE',
+    onDelete: 'CASCADE'
 })
 
 User.belongsTo(Team, {
     foreignKey: 'team_id',
 })
 
-Post.belongsTo(User, {
+User.hasMany(Post, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE'
+});
+
+Post.belongsTo(User, {
+    foreignKey: 'user_id',
 });
 
 Post.hasMany(Comment, {
@@ -47,7 +51,6 @@ Post.hasMany(Comment, {
 
 Comment.belongsTo(User, {
     foreignKey: 'user_id',
-    onDelete: 'CASCADE'
 });
 
 module.exports = {
