@@ -1,9 +1,11 @@
 // grabbing DOM variables with jQuery
-const logoutBtn = $('#logout-link');
+const logoutBtn = $('#logout-btn');
 
 // a function that will handle logging out the user
 const logoutFunction = async (event) => {
     event.preventDefault();
+    event.stopPropagation();
+    
     // making post request to the api to destroy the session if valid, otherwise alert to error
     const response = await fetch('/api/users/logout', {
         method: 'POST',
