@@ -1,7 +1,7 @@
 const teamListEl = $('.company-team-signup');
 const addTeamBtn = $('.add-team-button');
 
-
+// Can probably delete
 teamListEl.on('change', () => {
     if (teamListEl.val() === '') {
         addTeamBtn.disabled = true;
