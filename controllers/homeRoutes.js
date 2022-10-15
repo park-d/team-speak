@@ -36,6 +36,11 @@ router.get('/teamDashboard', (req, res) => {
     res.render('teamDashboard');
 });
 
+router.get('/comments', (req, res) => {
+    res.render('comments');
+});
+
+
 router.get('/userDashboard', async (req, res) => {
     try {
         const currentUserPreferences = await Preferences.findAll({
@@ -58,6 +63,7 @@ router.get('/userDashboard', async (req, res) => {
             }
         });
         const plainPreferences = catIDtoName.map((pref) => pref.get({plain: true}));
+
 
         const categoryParams = plainPreferences.map(pref => {
             return pref.category_name.toUpperCase();

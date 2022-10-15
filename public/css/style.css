@@ -60,6 +60,23 @@ a {
     box-shadow: 0px 12px 28px -7px var(--off-theme);
 }
 
+.article-post-card {
+    box-shadow: 0px 12px 28px -7px rgba(0,0,0,0.75);
+    border-radius: 8px;
+    padding: 12px;
+    height: 85vh;
+}
+
+.post-body {
+    border-bottom: 2px solid #2A2A2A;
+}
+
+.comment-card {
+    border: 2px solid var(--theme);
+    border-radius: 8px;
+}
+
+
 .home {
     background-color: var(--background);
     height: 100vh;
