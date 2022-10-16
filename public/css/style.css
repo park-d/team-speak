@@ -98,5 +98,34 @@ a {
 
 .login-title {
     background-color: red;
-    text-align: center;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .login-signup-buttons {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+} */
+
+.login-btn-container {
+    border: 1px solid red;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.signup-page-title {
+    background-color: red;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-page-buttons {
+    border: 1px solid red;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }

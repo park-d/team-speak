@@ -1,6 +1,6 @@
 <form class="card">
   <div class="card-divider login-title">
-    <h3>Login Below!</h3>
+    <h2>Login Below!</h2>
   </div>
   <div class="grid-container card-section">
     <div class="grid-x grid-padding-x grid-margin-x small-up1 medium-up-2 large-up-2">
@@ -14,8 +14,12 @@
           <input type="password" placeholder="Password" class="form-input" id="password-login" required>
         </label>
       </div>
-      <button class="submit success button" id="logInBtn">Login</button>
-      <a href="/signup" class="">Don't have an account? Signup Here!</a>
+      <div class="login-signup-buttons card-section grid-x grid-padding-x align-center">
+        <div class="login-btn-container">
+        <button class="button" id="logInBtn">Login</button>
+        <a href="/signup" class="">Don't have an account? Signup Here!</a>
+       </div>
+      </div>
     </div>
   </div>
 </form>
