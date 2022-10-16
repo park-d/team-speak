@@ -18,7 +18,7 @@ const signupFormHandler = async (event) => {
         });
         // if sign up is successful, bring the user to their dashboard page, otherwise alert to sign up error
         if (response.ok) {
-            document.location.replace('/userDashboard');
+            document.location.replace('/dashboard/my-news');
         } else {
             alert('Sign-up failed, please try again.');
         }

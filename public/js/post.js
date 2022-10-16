@@ -18,7 +18,7 @@ const newPostHandler = async (event) => {
     // if the post is successful, bring the user to their dashboard page to see the post, otherwise alert to post error
     if(response.ok) {
         console.log(response);
-        document.location.replace('/teamDashboard');
+        document.location.replace('/dashboard/teamDashboard');
 
     } else {
         alert('Could not post');

@@ -15,7 +15,7 @@ const loginFormHandler = async (event) => {
         });
         // if login is successful, bring the user to their dashboard page, otherwise alert to sign up error
         if(response.ok) {
-            document.location.replace('/userDashboard');
+            document.location.replace('/dashboard/my-news');
         } else {
             alert('Failed to log in');
         }

@@ -24,7 +24,7 @@
                         consectetur adipisicing elit.
                     </p>
                     <p>USERNAME - DATE</p>
-                    <a href="/comments">Click to show Comments</a>
+                    <a href="/dashboard/comments">Click to show Comments</a>
                 </div>
             </div>
         </div>
@@ -35,8 +35,10 @@
     <div class="cell">
             <div class="card">
                 <div class="card-section">
-                    <h4>This is a card.</h4>
-                    <p>It has an easy to override visual style, and is appropriately subdued.</p>
+                    <h4>{{title}}</h4>
+                    <p>{{body}}</p>
+                    <p>{{username}} - {{updated_at}}</p>
+                    <a href="/dashboard/comments">Click to show Comments</a>
                 </div>
             </div>
         </div>

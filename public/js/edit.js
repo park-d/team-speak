@@ -29,7 +29,7 @@ const editPostHandler = async (event) => {
     // if there are no issues, reload the dashboard page, otherwise alert to the issue
     if(response.ok) {
         console.log(response);
-        document.location.replace('/dashboard');
+        document.location.replace('/dashboard/my-news');
 
     } else {
         alert('Could not post edit');
