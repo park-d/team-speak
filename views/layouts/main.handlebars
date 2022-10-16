@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="/css/style.css" type="text/css">
 </head>
 
+</header>
+
 <body class="home">
     <div>
         <header class="custom-header">
@@ -30,27 +32,16 @@
                 <a class="custom-title" href="/">TeamSpeak</a>
             </h1>
             <ul class="menu">
+                {{#if loggedIn}}
                 <li><a href="/teamDashboard" class="user-team-btn">Your Team</a></li>
                 <li><a href="/userDashboard" class="user-news-btn">Your News</a></li>
-                <li><a href="/login" class="login-btn">Login</a></li>
+                <li><a href="/logout" class="logout-btn" id="logout-btn">Logout</a></li>
+                {{else}}
+                <li><a href="/register" class="register-btn">Register Company</a></li>
                 <li><a href="/signup" class="sign-up-btn">Sign Up</a></li>
-                <li><a href="/register" class="register-btn">Register your Company</a></li>
-                <li><a href="/" class="logout-btn" id="logout-btn">Logout</a></li>
+                <li><a href="/login" class="login-btn">Login</a></li>
+                {{/if}}
             </ul>
-
-            {{!-- DROPDOWN MENU FOR RESPONSIVE DESIGN --}}
-            {{!-- <ul class="dropdown menu" data-dropdown-menu>
-                <li>
-                    <a href="#">Item 1</a>
-                    <ul class="menu">
-                        <li><a href="/userDashboard">Your News</a></li>
-                        <li><a href="/login">Login</a></li>
-                        <li><a href="/signup">Sign Up</a></li>
-                        <li><a href="/register">Register your Company</a></li>
-                        <li><a href="/" id="logout-btn">Logout</a></li>
-                    </ul>
-                </li>
-            </ul> --}}
 
 
         </header>
@@ -66,7 +57,6 @@
     <script>
         $(document).foundation();
     </script>
-    <script src="js/navLoginCheck.js"></script>
 </body>
 
 </html>

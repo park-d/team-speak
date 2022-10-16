@@ -1,17 +1,19 @@
 const router = require("express").Router();
 const sequelize = require('../config/connection');
-const {QueryTypes} = require('sequelize');
-const {News, Preferences, Category} = require('../models');
+const { QueryTypes } = require('sequelize');
+const { News, Preferences, Category } = require('../models');
 
 // home route for landing page 
 router.get('/', async (req, res) => {
-    res.render("landingpage");
+    res.render("landingpage", {
+        loggedIn: req.session.loggedIn
+    });
 }
 );
 
 // login get route, if the user is logged in, redirect the page to the homepage, if not, then render the login page
 router.get('/login', (req, res) => {
-    if(req.session.loggedIn) {
+    if (req.session.loggedIn) {
         res.redirect('/');
         return;
     }
@@ -20,7 +22,7 @@ router.get('/login', (req, res) => {
 
 // signup get route, if the user is logged in, redirect the page to the homepage, if not, then render the sign-up page
 router.get('/signup', (req, res) => {
-    if(req.session.loggedIn) {
+    if (req.session.loggedIn) {
         res.redirect('/userDashboard');
         return;
     }
@@ -37,12 +39,13 @@ router.get('/teamDashboard', async (req, res) => {
     try {
         const posts = await sequelize.query("SELECT post.*, user.username, news.headline, news.link, news.short_description from post INNER JOIN user on user.user_id = post.user_id LEFT JOIN news on news.article_id = post.article_id WHERE post.team_id = ?", {
             replacements: [req.session.team_id],
-            type: QueryTypes.SELECT})
-        console.log(posts)
-        res.render('teamDashboard', {posts});
-    } catch(err) {
+            type: QueryTypes.SELECT
+        });
+        console.log(posts);
+        res.render('teamDashboard', { posts });
+    } catch (err) {
         res.status(500).json(err);
-}
+    }
 
 });
 
@@ -82,7 +85,7 @@ router.get('/userDashboard', async (req, res) => {
             }
         }
         );
-        const selectedpreferences = currentUserPreferences.map((pref) => pref.get({plain: true}));
+        const selectedpreferences = currentUserPreferences.map((pref) => pref.get({ plain: true }));
 
         const organizedCatArray = selectedpreferences.map(pref => {
             return pref.category_id
@@ -95,7 +98,7 @@ router.get('/userDashboard', async (req, res) => {
                 category_id: organizedCatArray
             }
         });
-        const plainPreferences = catIDtoName.map((pref) => pref.get({plain: true}));
+        const plainPreferences = catIDtoName.map((pref) => pref.get({ plain: true }));
 
 
         const categoryParams = plainPreferences.map(pref => {
@@ -103,25 +106,25 @@ router.get('/userDashboard', async (req, res) => {
         });
         console.log(categoryParams);
 
-        if(!categoryParams) {
+        if (!categoryParams) {
             alert('You have not set your preferences.');
             res.redirect('/userDashboard');
         } else {
             const allNews = await News.findAll({
                 where: {
                     category: categoryParams,
-                    article_id: [130,132, 2000]
+                    article_id: [130, 132, 2000]
                 }
             }
             );
 
             //because of the way sequelize returns data, we have to trim unwanted formatting (nested objects) with plain: true
-            const article = allNews.map((news) => news.get({plain: true}));
+            const article = allNews.map((news) => news.get({ plain: true }));
             // rendering the all-posts handlebars view and passing the reformatted data to it
             console.log(article);
-            res.render("userDashboard", {article});
+            res.render("userDashboard", { article });
         }
-    } catch(err) {
+    } catch (err) {
         res.status(500).json(err);
     }
 });
