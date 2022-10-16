@@ -13,7 +13,7 @@ const logoutFunction = async (event) => {
     });
     // if logout is successful, bring the user to the homepage, otherwise alert to logout error
     if(response.ok) {
-        document.location.replace('/');
+        document.location.replace('/logout');
     } else {
         alert('Could not log out');
     }
