@@ -67,6 +67,9 @@ router.get('/comments/:id', async (req, res) => {
 //         // Get all projects and JOIN with user data
 //         const teamPosts = await Post.findByPk({
 //             // where: {
+
+// }
+
 //         });
 
 //         // Serialize data so the template can read it
@@ -133,6 +136,11 @@ router.get('/userDashboard', async (req, res) => {
     } catch(err) {
         res.status(500).json(err);
     }
+});
+
+// logout get route... redirect the logout page.
+router.get('/logout', (req, res) => {
+    res.render('logout');
 });
 
 module.exports = router;
