@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const sequelize = require('../config/connection');
 const {QueryTypes} = require('sequelize');
-const {News, Preferences, Category} = require('../models');
+const {News, Preferences, Category, Post, Comment, User} = require('../models');
 
 // home route for landing page 
 router.get('/', async (req, res) => {
@@ -46,8 +46,20 @@ router.get('/teamDashboard', async (req, res) => {
 
 });
 
-router.get('/comments', (req, res) => {
-    res.render('comments');
+router.get('/posts/:id', async (req, res) => {
+    try {
+        const currentPosts = await Post.findByPk(req.params.id, {
+            include: [User, {model: Comment, include: [User]},],
+        });
+        const post = currentPosts.get({plain: true});
+        const currentNews = await News.findByPk(post.article_id);
+        const news = currentNews.get({plain: true});
+        var postData = {...post, ...news}; 
+        console.log(postData)
+        res.render('comments', {postData});
+    } catch(err) {
+        res.status(500).json(err);
+    }
 });
 
 // router.get('/comments', async (req, res) => {
