@@ -1,6 +1,5 @@
 const router = require("express").Router();
-const sequelize = require("../config/connection");
-const {News, Preferences, User, Category} = require('../models');
+const {News, Preferences, Category} = require('../models');
 
 // home route for landing page 
 router.get('/', async (req, res) => {
@@ -45,8 +44,6 @@ router.get('/comments', (req, res) => {
 //         // Get all projects and JOIN with user data
 //         const teamPosts = await Post.findByPk({
 //             // where: {
-    
-}
 //         });
 
 //         // Serialize data so the template can read it
@@ -99,7 +96,7 @@ router.get('/userDashboard', async (req, res) => {
             const allNews = await News.findAll({
                 where: {
                     category: categoryParams,
-                    article_id: 130
+                    article_id: [130,132, 2000]
                 }
             }
             );
