@@ -36,7 +36,16 @@ Post.init(
                 key: 'user_id',
                 // unique: false
             },
-        }
+        },
+        article_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'news',
+                key: 'article_id',
+                // unique: false
+            }
+        },
     },
     {
         sequelize,
