@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const sequelize = require('../config/connection');
-const { QueryTypes } = require('sequelize');
-const { News, Preferences, Category } = require('../models');
+const {QueryTypes} = require('sequelize');
+const {News, Preferences, Category, Post, Comment, User} = require('../models');
 
 // home route for landing page 
 router.get('/', async (req, res) => {
@@ -49,8 +49,20 @@ router.get('/teamDashboard', async (req, res) => {
 
 });
 
-router.get('/comments', (req, res) => {
-    res.render('comments');
+router.get('/posts/:id', async (req, res) => {
+    try {
+        const currentPosts = await Post.findByPk(req.params.id, {
+            include: [User, {model: Comment, include: [User]},],
+        });
+        const post = currentPosts.get({plain: true});
+        const currentNews = await News.findByPk(post.article_id);
+        const news = currentNews.get({plain: true});
+        var postData = {...post, ...news}; 
+        console.log(postData)
+        res.render('comments', {postData});
+    } catch(err) {
+        res.status(500).json(err);
+    }
 });
 
 // router.get('/comments', async (req, res) => {
@@ -85,13 +97,14 @@ router.get('/userDashboard', async (req, res) => {
             }
         }
         );
-        const selectedpreferences = currentUserPreferences.map((pref) => pref.get({ plain: true }));
+
+        const selectedpreferences = currentUserPreferences.map((pref) => pref.get({plain: true}));
+    
 
         const organizedCatArray = selectedpreferences.map(pref => {
             return pref.category_id
                 ;
         });
-        console.log(organizedCatArray);
         const catIDtoName = await Category.findAll({
             attributes: ['category_name'],
             where: {
@@ -100,11 +113,9 @@ router.get('/userDashboard', async (req, res) => {
         });
         const plainPreferences = catIDtoName.map((pref) => pref.get({ plain: true }));
 
-
         const categoryParams = plainPreferences.map(pref => {
             return pref.category_name.toUpperCase();
         });
-        console.log(categoryParams);
 
         if (!categoryParams) {
             alert('You have not set your preferences.');
@@ -121,8 +132,9 @@ router.get('/userDashboard', async (req, res) => {
             //because of the way sequelize returns data, we have to trim unwanted formatting (nested objects) with plain: true
             const article = allNews.map((news) => news.get({ plain: true }));
             // rendering the all-posts handlebars view and passing the reformatted data to it
-            console.log(article);
-            res.render("userDashboard", { article });
+
+            res.render("userDashboard", {article});
+
         }
     } catch (err) {
         res.status(500).json(err);

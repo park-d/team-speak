@@ -3,58 +3,38 @@
         <div class="cell">
             <div class="card article-post-card">
                 <div class="card-section">
-                    <h4 class="post-title">ARTICLE HEADLINE FROM USER SELECTION</h4>
-                    <p class="post-body">User Post body - Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Impedit, quo
-                        necessitatibus recusandae dolor perspiciatis nesciunt repellendus. Eaque id earum esse.
-                        Cupiditate aut in quidem minus neque est! Voluptatum, fuga illum. Lorem ipsum, dolor sit amet
-                        consectetur adipisicing elit.
-                    </p>
+                    <h4 class="post-title">{{postData.title}}</h4> 
+                    <p>{{postData.body}}</p>
+                    <a href={{postData.link}} target="_blank">Read the article here</a>
+                    <p class="post-body"> Posted by: {{postData.user.username}}, {{format_date_time postData.createdAt}}</p>
+                    <button data-open="postModal"> Add comment
+                        <i class="fa-solid fa-square-plus custom-plus"></i>
+                    </button>
                 </div>
+                <div class="reveal" id="postModal" data-reveal>
+                    <form>
+                        <h4 data-id={{postData.post_id}} id="post-id"> Add your comment... </h4>
+                        <textarea type="text" placeholder="Enter comment here" class="form-input" name="comment-input"
+                            required></textarea>
+                        <a href="" class="submit" id="submit-comment">Submit Comment!</a>
+                    </form>
+                </div>
+                {{#if postData.comments}}
+                <section>
+                <div><h5>Team Comments</h5></div>
+                {{#each postData.comments}}
                 <div class="card comment-card">
                     <div class="card-section">
-                        <p>USERNAME</p>
-                        <p class="comment-body">User Post body - Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit.
-                            Impedit, quo
-                            necessitatibus recusandae dolor perspiciatis nesciunt repellendus. Eaque id earum esse.
-                            Cupiditate aut in quidem minus neque est! Voluptatum, fuga illum. Lorem ipsum, dolor sit
-                            amet
-                            consectetur adipisicing elit.
-                        </p>
+                        <p class="comment-body">{{body}}</p>
+                        <p>- {{user.username}}, {{format_date_time createdAt}}</p>
                     </div>
                 </div>
-
-                {{!-- comments below --}}
-
-                <div class="card comment-card">
-                    <div class="card-section">
-                        <p class="username">USERNAME</p>
-                        <p class="comment-body">User Post body - Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit.
-                            Impedit, quo
-                            necessitatibus recusandae dolor perspiciatis nesciunt repellendus. Eaque id earum esse.
-                            Cupiditate aut in quidem minus neque est! Voluptatum, fuga illum. Lorem ipsum, dolor sit
-                            amet
-                            consectetur adipisicing elit.
-                        </p>
-                    </div>
-                </div>
-                <div class="card comment-card">
-                    <div class="card-section">
-                        <p>USERNAME</p>
-                        <p class="comment-body">User Post body - Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit.
-                            Impedit, quo
-                            necessitatibus recusandae dolor perspiciatis nesciunt repellendus. Eaque id earum esse.
-                            Cupiditate aut in quidem minus neque est! Voluptatum, fuga illum. Lorem ipsum, dolor sit
-                            amet
-                            consectetur adipisicing elit.
-                        </p>
-                    </div>
-                </div>
+                {{/each}}
+                </section>
+                {{/if}}
             </div>
         </div>
     </div>
 </div>
-<script src="/js/loadComments.js"></script>
+<script src="/js/comment.js"></script>
+<script src="../utils/helpers.js"></script>
