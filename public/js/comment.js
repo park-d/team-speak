@@ -1,15 +1,16 @@
 //***************** THESE NEED TO BE UPDATED********************//
-const newCommentBtn = $('#new-comment-btn');
+const commentBtn = $('#submit-comment');
 
 // a function that will handle adding a new comment for the user
-const commentFormHandler = async function (event) {
+const commentHandler = async function (event) {
     event.preventDefault();
 
-    const post_id = $('input[name="post-id"]').value;
-    const body = $('textarea[name="comment-body"]').value;
+    const post_id = $('#post-id').attr("data-id");
+    const body = $('textarea[name="comment-input"]').val();
+    console.log(post_id,body)
     // we need to fetch data from the api and make a post request when we click on the new post button
     if (body) {
-        await fetch('/api/comment', {
+        await fetch('/api/comments', {
             method: 'POST',
             body: JSON.stringify({
                 post_id,
@@ -24,4 +25,4 @@ const commentFormHandler = async function (event) {
     }
 };
 
-newCommentBtn(commentFormHandler);
+commentBtn.click(commentHandler);

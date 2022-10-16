@@ -16,10 +16,10 @@ router.post('/new', async (req, res) => {
 });
 
 // put route for updating the post, this DOES NOT work as of now, but if I comment it out, it loads with an error
-router.put('/:id', withAuth, async (req, res) => {
+router.put('/:id', async (req, res) => {
     console.log(req.body);
     try {
-        const updatePost = await Post.update(req.body, {
+        const updatePost = await Post.update(...req.body, {
             where: {
                 id: req.params.id,
             },
