@@ -46,7 +46,7 @@ router.get('/teamDashboard', async (req, res) => {
 
 });
 
-router.get('/comments/:id', async (req, res) => {
+router.get('/posts/:id', async (req, res) => {
     try {
         const currentPosts = await Post.findByPk(req.params.id, {
             include: [User, {model: Comment, include: [User]},],
