@@ -40,6 +40,28 @@ router.get('/comments', (req, res) => {
     res.render('comments');
 });
 
+// router.get('/comments', async (req, res) => {
+//     try {
+//         // Get all projects and JOIN with user data
+//         const teamPosts = await Post.findByPk({
+//             // where: {
+    
+
+//         });
+
+//         // Serialize data so the template can read it
+//         const allPosts = teamPosts.map((post) => post.get({ plain: true }));
+
+//         // Pass serialized data and session flag into template
+//         res.render('comments', {
+//             allPosts
+//         });
+//     } catch (err) {
+//         res.status(500).json(err);
+//     }
+
+
+// });
 
 router.get('/userDashboard', async (req, res) => {
     try {
