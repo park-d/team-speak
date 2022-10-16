@@ -46,7 +46,7 @@ router.get('/comments', (req, res) => {
 //         const teamPosts = await Post.findByPk({
 //             // where: {
     
-}
+// }
 //         });
 
 //         // Serialize data so the template can read it
