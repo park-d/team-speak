@@ -3,10 +3,21 @@
         <div class="cell">
             <div class="card article-post-card">
                 <div class="card-section">
-                    <h4 class="post-title">{{postData.title}}</h4>
+                    <h4 class="post-title">{{postData.title}}</h4> 
                     <p>{{postData.body}}</p>
-                    <a href={{postData.link}}>Read the article here</a>
-                    <p class="post-body"> Posted by: {{postData.user.username}} at {{postData.createdAt}}</p>
+                    <a href={{postData.link}} target="_blank">Read the article here</a>
+                    <p class="post-body"> Posted by: {{postData.user.username}}, {{format_date_time postData.createdAt}}</p>
+                    <button data-open="postModal"> Add comment
+                        <i class="fa-solid fa-square-plus custom-plus"></i>
+                    </button>
+                </div>
+                <div class="reveal" id="postModal" data-reveal>
+                    <form>
+                        <h4 data-id={{postData.post_id}} id="post-id"> Add your comment... </h4>
+                        <textarea type="text" placeholder="Enter comment here" class="form-input" name="comment-input"
+                            required></textarea>
+                        <a href="" class="submit" id="submit-comment">Submit Comment!</a>
+                    </form>
                 </div>
                 {{#if postData.comments}}
                 <section>
@@ -14,8 +25,8 @@
                 {{#each postData.comments}}
                 <div class="card comment-card">
                     <div class="card-section">
-                        <p>{{user.username}} - {{createdAt}}</p>
                         <p class="comment-body">{{body}}</p>
+                        <p>- {{user.username}}, {{format_date_time createdAt}}</p>
                     </div>
                 </div>
                 {{/each}}
@@ -25,4 +36,5 @@
         </div>
     </div>
 </div>
-<script src="/js/loadComments.js"></script>
+<script src="/js/comment.js"></script>
+<script src="../utils/helpers.js"></script>

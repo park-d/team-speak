@@ -95,12 +95,11 @@ router.get('/userDashboard', async (req, res) => {
         }
         );
         const selectedpreferences = currentUserPreferences.map((pref) => pref.get({plain: true}));
-
+    
         const organizedCatArray = selectedpreferences.map(pref => {
             return pref.category_id
                 ;
         });
-        console.log(organizedCatArray);
         const catIDtoName = await Category.findAll({
             attributes: ['category_name'],
             where: {
@@ -109,11 +108,9 @@ router.get('/userDashboard', async (req, res) => {
         });
         const plainPreferences = catIDtoName.map((pref) => pref.get({plain: true}));
 
-
         const categoryParams = plainPreferences.map(pref => {
             return pref.category_name.toUpperCase();
         });
-        console.log(categoryParams);
 
         if(!categoryParams) {
             alert('You have not set your preferences.');
@@ -130,7 +127,6 @@ router.get('/userDashboard', async (req, res) => {
             //because of the way sequelize returns data, we have to trim unwanted formatting (nested objects) with plain: true
             const article = allNews.map((news) => news.get({plain: true}));
             // rendering the all-posts handlebars view and passing the reformatted data to it
-            console.log(article);
             res.render("userDashboard", {article});
         }
     } catch(err) {
