@@ -126,4 +126,9 @@ router.get('/userDashboard', async (req, res) => {
     }
 });
 
+// logout get route... redirect the logout page.
+router.get('/logout', (req, res) => {
+    res.render('logout');
+});
+
 module.exports = router;
