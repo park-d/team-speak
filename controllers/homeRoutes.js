@@ -1,6 +1,7 @@
 const router = require("express").Router();
-const sequelize = require("../config/connection");
-const {News, Preferences, User, Category} = require('../models');
+const sequelize = require('../config/connection');
+const {QueryTypes} = require('sequelize');
+const {News, Preferences, Category} = require('../models');
 
 // home route for landing page 
 router.get('/', async (req, res) => {
@@ -32,8 +33,17 @@ router.get('/register', (req, res) => {
 });
 
 // get route for team dashboard. No direct link from homepage or userDashboard yet
-router.get('/teamDashboard', (req, res) => {
-    res.render('teamDashboard');
+router.get('/teamDashboard', async (req, res) => {
+    try {
+        const posts = await sequelize.query("SELECT post.*, user.username, news.headline, news.link, news.short_description from post INNER JOIN user on user.user_id = post.user_id LEFT JOIN news on news.article_id = post.article_id WHERE post.team_id = ?", {
+            replacements: [req.session.team_id],
+            type: QueryTypes.SELECT})
+        console.log(posts)
+        res.render('teamDashboard', {posts});
+    } catch(err) {
+        res.status(500).json(err);
+}
+
 });
 
 router.get('/comments', (req, res) => {
@@ -45,7 +55,6 @@ router.get('/comments', (req, res) => {
 //         // Get all projects and JOIN with user data
 //         const teamPosts = await Post.findByPk({
 //             // where: {
-    
 
 //         });
 
@@ -99,7 +108,7 @@ router.get('/userDashboard', async (req, res) => {
             const allNews = await News.findAll({
                 where: {
                     category: categoryParams,
-                    article_id: 130
+                    article_id: [130,132, 2000]
                 }
             }
             );
@@ -107,12 +116,17 @@ router.get('/userDashboard', async (req, res) => {
             //because of the way sequelize returns data, we have to trim unwanted formatting (nested objects) with plain: true
             const article = allNews.map((news) => news.get({plain: true}));
             // rendering the all-posts handlebars view and passing the reformatted data to it
-            console.log(article[0]);
+            console.log(article);
             res.render("userDashboard", {article});
         }
     } catch(err) {
         res.status(500).json(err);
     }
+});
+
+// logout get route... redirect the logout page.
+router.get('/logout', (req, res) => {
+    res.render('logout');
 });
 
 module.exports = router;
