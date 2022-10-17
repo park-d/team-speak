@@ -1,15 +1,22 @@
-<div class="grid-container">
+<div class="grid-container comment-container">
     <div class="grid-x grid-margin-x small-up-1 medium-up-1 large-up-1">
         <div class="cell">
             <div class="card article-post-card">
                 <div class="card-section">
-                    <h4 class="post-title">{{postData.title}}</h4> 
-                    <p>{{postData.body}}</p>
-                    <a href={{postData.link}} target="_blank">Read the article here</a>
-                    <p class="post-body"> Posted by: {{postData.user.username}}, {{format_date_time postData.createdAt}}</p>
-                    <button data-open="postModal"> Add comment
-                        <i class="fa-solid fa-square-plus custom-plus"></i>
-                    </button>
+                    <div class="article-post-content">
+                        <h4 class="article-post-title">{{postData.title}}</h4>
+                        <p>{{postData.body}}</p>
+                        <a href={{postData.link}} target="_blank" class="article-link form-link">Read the
+                            article</a>
+                        <button data-open="postModal" class="comment-link"> Add comment
+                            <i class=" fa-solid fa-square-plus custom-plus"></i>
+                        </button>
+                    </div>
+                    <div class="article-post-details">
+                        <p class="post-body"> Posted by: {{postData.user.username}}, {{format_date_time
+                            postData.createdAt}}
+                        </p>
+                    </div>
                 </div>
                 <div class="reveal" id="postModal" data-reveal>
                     <form>
@@ -21,15 +28,17 @@
                 </div>
                 {{#if postData.comments}}
                 <section>
-                <div><h5>Team Comments</h5></div>
-                {{#each postData.comments}}
-                <div class="card comment-card">
-                    <div class="card-section">
-                        <p class="comment-body">{{body}}</p>
-                        <p>- {{user.username}}, {{format_date_time createdAt}}</p>
+                    <div>
+                        <h5>Team Comments</h5>
                     </div>
-                </div>
-                {{/each}}
+                    {{#each postData.comments}}
+                    <div class="card comment-card">
+                        <div class="card-section">
+                            <p class="comment-body">{{body}}</p>
+                            <p>- {{user.username}}, {{format_date_time createdAt}}</p>
+                        </div>
+                    </div>
+                    {{/each}}
                 </section>
                 {{/if}}
             </div>
@@ -37,4 +46,4 @@
     </div>
 </div>
 <script src="/js/comment.js"></script>
-<script src="../utils/helpers.js"></script>
+<script src="/utils/helpers.js"></script>
