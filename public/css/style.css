@@ -276,6 +276,10 @@ legend {
     color: var(--theme);
 }
 
+.login-title h2 {
+    color: var(--theme)
+}
+
 .login-btn-container {
     flex-direction: row;
     justify-content: space-between;
@@ -288,7 +292,10 @@ legend {
     justify-content: center;
     align-items: center;
     font-weight: var(--rubik-bold);
-    color: var(--theme);
+}
+
+.signup-page-title h2 {
+    color: var(--theme)
 }
 
 .signup-page-buttons {
