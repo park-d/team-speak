@@ -6,7 +6,7 @@
                     <h4 class="post-title">{{postData.title}}</h4> 
                     <p>{{postData.body}}</p>
                     <a href={{postData.link}} target="_blank">Read the article here</a>
-                    <p class="post-body"> Posted by: {{postData.user.username}}, {{format_date_time postData.createdAt}}</p>
+                    <p class="post-body"> Posted by: <a class="form-link" href="/teamDashboard/{{postData.user.username}}">{{postData.user.username}}</a>, {{format_date_time postData.createdAt}}</p>
                     <button data-open="postModal"> Add comment
                         <i class="fa-solid fa-square-plus custom-plus"></i>
                     </button>

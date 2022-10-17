@@ -17,7 +17,7 @@ router.get('/login', (req, res) => {
         res.redirect('/');
         return;
     }
-    res.render('login');
+    res.render('login', {loggedIn: req.session.loggedIn});
 });
 
 // signup get route, if the user is logged in, redirect the page to the homepage, if not, then render the sign-up page
@@ -26,23 +26,40 @@ router.get('/signup', (req, res) => {
         res.redirect('/userDashboard');
         return;
     }
-    res.render('signup');
+    res.render('signup', {loggedIn: req.session.loggedIn});
 });
 
 // register get route, for companies, redirect the page to the homepage, if not, then render the sign-up page
 router.get('/register', (req, res) => {
-    res.render('signup-admin');
+    res.render('signup-admin', {loggedIn: req.session.loggedIn});
 });
 
 // get route for team dashboard. No direct link from homepage or userDashboard yet
 router.get('/teamDashboard', async (req, res) => {
     try {
-        const posts = await sequelize.query("SELECT post.*, user.username, news.headline, news.link, news.short_description from post INNER JOIN user on user.user_id = post.user_id LEFT JOIN news on news.article_id = post.article_id WHERE post.team_id = ?", {
+        const posts = await sequelize.query("SELECT post.*, user.username, news.headline, news.link, news.short_description from post INNER JOIN user on user.user_id = post.user_id LEFT JOIN news on news.article_id = post.article_id WHERE post.team_id = ? ORDER BY post.updated_at DESC", {
             replacements: [req.session.team_id],
             type: QueryTypes.SELECT
         });
         console.log(posts);
-        res.render('teamDashboard', {posts});
+        res.render('teamDashboard', {posts, loggedIn:req.session.loggedIn});
+    } catch(err) {
+        res.status(500).json(err);
+    }
+
+});
+
+router.get('/teamDashboard/:username', async (req, res) => {
+    try {
+        const posts = await sequelize.query("SELECT post.*, user.username, news.headline, news.link, news.short_description from post INNER JOIN user on user.user_id = post.user_id LEFT JOIN news on news.article_id = post.article_id WHERE user.username = ? ORDER BY post.updated_at DESC", {
+            replacements: [req.params.username],
+            type: QueryTypes.SELECT
+        });
+
+        const username = [req.params.username]
+        console.log(username)
+        console.log(posts);
+        res.render('oneUserDashboard', {posts, username, loggedIn: req.session.loggedIn});
     } catch(err) {
         res.status(500).json(err);
     }
@@ -59,7 +76,7 @@ router.get('/posts/:id', async (req, res) => {
         const news = currentNews.get({plain: true});
         var postData = {...post, ...news};
         console.log(postData);
-        res.render('comments', {postData});
+        res.render('comments', {postData, loggedIn: req.session.loggedIn});
     } catch(err) {
         res.status(500).json(err);
     }
@@ -102,7 +119,7 @@ router.get('/userDashboard', async (req, res) => {
             const allNews = await News.findAll({
                 where: {
                     category: categoryParams,
-                    article_id: [130, 132, 2000, 893]
+                    article_id: [130, 132, 133, 134, 2000, 893]
                 }
             });
             //because of the way sequelize returns data, we have to trim unwanted formatting (nested objects) with plain: true
@@ -176,10 +193,7 @@ router.get('/userDashboard', async (req, res) => {
                 }
             }
             // rendering the userDashboard handlebars view and passing the reformatted data to it
-            res.render("userDashboard", {sportsArticles, politicsArticles, wellnessArticles, travelArticles, stylebeautyArticles, healthylivingArticles, parentingArticles, queervoicesArticles, fooddrinkArticles, businessArticles, comedyArticles, blackvoicesArticles, homelivingArticles, parentsArticles, entertainmentArticles});
-            // res.render("test", {sportsArticles, politicsArticles, wellnessArticles, travelArticles, stylebeautyArticles, healthylivingArticles, parentingArticles, queervoicesArticles, fooddrinkArticles, businessArticles, comedyArticles, blackvoicesArticles, homelivingArticles, parentsArticles, entertainmentArticles});
-
-
+            res.render("userDashboard", {sportsArticles, politicsArticles, wellnessArticles, travelArticles, stylebeautyArticles, healthylivingArticles, parentingArticles, queervoicesArticles, fooddrinkArticles, businessArticles, comedyArticles, blackvoicesArticles, homelivingArticles, parentsArticles, entertainmentArticles, loggedIn: req.session.loggedIn});
         }
     } catch(err) {
         res.status(500).json(err);
@@ -188,7 +202,7 @@ router.get('/userDashboard', async (req, res) => {
 
 // logout get route... redirect the logout page.
 router.get('/logout', (req, res) => {
-    res.render('logout');
+    res.render('logout', {loggedIn: req.session.loggedIn});
 });
 
 module.exports = router;
