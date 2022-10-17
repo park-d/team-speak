@@ -444,6 +444,29 @@ legend {
     background-color: var(--off-black);
 }
 
-.is-active {
+.logout-page-img {
+    width: 75%;
+    height: auto;
+}
+
+.logout-card-section {
+    background-color: var(--off-black);
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.img-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#logout-pg-card {
+    border: 1px solid var(--off-black);
+}
+
+.logout-pg-text {
+    text-align: center;
     color: var(--theme);
 }
