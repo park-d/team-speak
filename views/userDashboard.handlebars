@@ -18,8 +18,8 @@
       <input id="checkbox10" type="checkbox" value="10"><label for="checkbox10">Business</label>
       <input id="checkbox11" type="checkbox" value="11"><label for="checkbox11">Comedy</label>
       <input id="checkbox12" type="checkbox" value="12"><label for="checkbox12">Black Voices</label>
-      <input id="checkbox13" type="checkbox" value="13"><label for="checkbox13">Home & Living</label>
-      <input id="checkbox14" type="checkbox" value="14"><label for="checkbox14">Parents</label>
+      <input id="checkbox13" type="checkbox" value="13"><label for="checkbox13">Culture & Arts</label>
+      <input id="checkbox14" type="checkbox" value="14"><label for="checkbox14">Weird News</label>
       <input id="checkbox15" type="checkbox" value="15"><label for="checkbox15">Entertainment</label>
     </fieldset>
     <button type="submit" class="form-btn" id="select-preferences-btn">Submit Preferences!</button>
@@ -43,7 +43,7 @@
   <li class="tabs-title"><a href="#travel">Travel</a></li>
   {{/if}}
   {{#if stylebeautyArticles}}
-  <li class="tabs-title"><a href="#style-&-beauty">Style & Beauty</a></li>
+  <li class="tabs-title"><a href="#style-beauty">Style & Beauty</a></li>
   {{/if}}
   {{#if healthylivingArticles}}
   <li class="tabs-title"><a href="#healthy-living">Healthy Living</a></li>
@@ -55,7 +55,7 @@
   <li class="tabs-title"><a href="#queer-voices">Queer Voices</a></li>
   {{/if}}
   {{#if fooddrinkArticles}}
-  <li class="tabs-title"><a href="#food-&-drink">Food & Drink</a></li>
+  <li class="tabs-title"><a href="#food-drink">Food & Drink</a></li>
   {{/if}}
   {{#if businessArticles}}
   <li class="tabs-title"><a href="#business">Business</a></li>
@@ -66,11 +66,11 @@
   {{#if blackvoicesArticles}}
   <li class="tabs-title"><a href="#black-voices">Black Voices</a></li>
   {{/if}}
-  {{#if homelivingArticles}}
-  <li class="tabs-title"><a href="#home-&-living">Home & living</a></li>
+  {{#if cultureartsArticles}}
+  <li class="tabs-title"><a href="#culture-arts">Culture & Arts</a></li>
   {{/if}}
-  {{#if parentsArticles}}
-  <li class="tabs-title"><a href="#parents">Parents</a></li>
+  {{#if weirdnewsArticles}}
+  <li class="tabs-title"><a href="#weird-news">Weird News</a></li>
   {{/if}}
   {{#if entertainmentArticles}}
   <li class="tabs-title"><a href="#entertainment">Entertainment</a></li>
@@ -189,7 +189,7 @@
     </div>
     {{/each}}
   </div>
-  <div class="tabs-panel" id="style-&-beauty">
+  <div class="tabs-panel" id="style-beauty">
     {{#each stylebeautyArticles}}
     <div class="card column medium-10 cell user-dashboard-article">
       <div class="card-divider article-title">
@@ -301,7 +301,7 @@
     </div>
     {{/each}}
   </div>
-  <div class="tabs-panel" id="food-&-drink">
+  <div class="tabs-panel" id="food-drink">
     {{#each fooddrinkArticles}}
     <div class="card column medium-10 cell user-dashboard-article">
       <div class="card-divider article-title">
@@ -413,8 +413,8 @@
     </div>
     {{/each}}
   </div>
-  <div class="tabs-panel" id="home-&-living">
-    {{#each homelivingsArticles}}
+  <div class="tabs-panel" id="culture-arts">
+    {{#each cultureartsArticles}}
     <div class="card column medium-10 cell user-dashboard-article">
       <div class="card-divider article-title">
         <h4>
@@ -441,8 +441,8 @@
     </div>
     {{/each}}
   </div>
-  <div class="tabs-panel" id="parents">
-    {{#each parentsArticles}}
+  <div class="tabs-panel" id="weird-news">
+    {{#each weirdnewsArticles}}
     <div class="card column medium-10 cell user-dashboard-article">
       <div class="card-divider article-title">
         <h4>
