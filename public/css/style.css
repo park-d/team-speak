@@ -48,7 +48,8 @@ h4 {
 
 p,
 a,
-label {
+label,
+legend {
     color: var(--background);
 }
 
@@ -271,6 +272,8 @@ label {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    font-weight: var(--rubik-bold);
+    color: var(--theme);
 }
 
 .login-btn-container {
@@ -284,6 +287,8 @@ label {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-weight: var(--rubik-bold);
+    color: var(--theme);
 }
 
 .signup-page-buttons {
@@ -306,4 +311,43 @@ label {
 
 .user-dashboard-article {
     background-color: var(--black);
+}
+
+.preferences-modal-title {
+    background-color: var(--off-black);
+    color: var(--theme)
+}
+
+.preferences-modal-values {
+    background-color: var(--off-black);
+}
+
+.preferences-modal {
+    background-color: var(--black);
+}
+
+.user-dashboard-title {
+    color: var(--theme);
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.article-category {
+    background-color: var(--off-black);
+    font-weight: var(--rubik-bold);
+    color: var(--theme);
+}
+
+.custom-plus:hover {
+    color: var(--theme);
+    cursor: pointer;
+}
+
+.post-modal {
+   background-color: var(--black);
+}
+
+.post-modal-title {
+    color: var(--theme)
 }
