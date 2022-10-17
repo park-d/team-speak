@@ -8,12 +8,9 @@ const seedDatabase = async () => {
     await sequelize.sync({force: true});
 
     await News.bulkCreate(newsData);
-
-    process.exit(0);
 };
 
 const seedCategories = async () => {
-    await sequelize.sync({force: true});
 
     await Category.bulkCreate(categoryData);
 

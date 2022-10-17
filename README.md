@@ -27,7 +27,7 @@ Javascript
 Kaggle Data Set
 Node.js
 Express
-Sequalize
+Sequelize
 MySQL
 Heroku
 
