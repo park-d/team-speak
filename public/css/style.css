@@ -339,6 +339,10 @@ legend {
     color: var(--theme);
 }
 
+.custom-plus{
+    color: var(--background);
+}
+
 .custom-plus:hover {
     color: var(--theme);
     cursor: pointer;
