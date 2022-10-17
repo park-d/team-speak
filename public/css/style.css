@@ -356,9 +356,8 @@ legend {
 }
 
 .signup-page-buttons {
-    border: 1px solid red;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
