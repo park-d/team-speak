@@ -301,7 +301,6 @@ legend {
 .home-container {
     display: flex;
     flex-direction: column;
-    border: 1px solid hotpink;
 }
 
 .home {
@@ -501,3 +500,6 @@ legend {
     color: var(--theme);
 }
 
+#signup-button {
+    margin-bottom: 14px;
+}
