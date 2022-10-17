@@ -21,15 +21,15 @@ TeamSpeak is your Team's digital cohesion location! Team members are able to rea
 
 ## Installation
 
-Handlebars
-CSS / Foundation Framework
-Javascript
-Kaggle Data Set
-Node.js
-Express
-Sequelize
-MySQL
-Heroku
+* Handlebars
+* CSS / Foundation Framework
+* Javascript
+* Kaggle Data Set
+* Node.js
+* Express
+* Sequelize
+* MySQL
+* Heroku
 
 ## Usage
 
@@ -40,10 +40,14 @@ N/A
 
 
 ## Contributors
-Devan Parkison
-Jackson Myhre
-Roy Logan
-Hamza Ramzanali
+* Devan Parkison  
+    - GitHub: [park-d](https://github.com/park-d)
+* Jackson Myhre   
+    - GitHub: [jack421myhre](https://github.com/jack421myhre)
+* Roy Logan       
+    - GitHub: [RBL1992](https://github.com/RBL1992)
+* Hamza Ramzanali 
+    - GitHub: [hamzaramzanali](https://github.com/hamzaramzanali)
 
 ## Testing
 N/A
@@ -51,12 +55,7 @@ N/A
 
 ## Questions
 
-GitHub: [park-d](https://github.com/park-d)
-GitHub: [jack421myhre](https://github.com/jack421myhre)
-GitHub: [RBL1992](https://github.com/RBL1992)
-GitHub: [hamzaramzanali](https://github.com/hamzaramzanali)
-
-Email: [mailto:devan.parkison@gmail.com]
-Email: [mailto:Jack421myhre@gmail.com]
-Email: [mailto:loganroyjr4@gmail.com]
-Email: [mailto:Hamzaramzanali1@gmail.com]
+* [Email Devan](mailto:devan.parkison@gmail.com)
+* [Email Jackson](mailto:Jack421myhre@gmail.com)
+* [Email Roy](mailto:loganroyjr4@gmail.com)
+* [Email Hamza](mailto:Hamzaramzanali1@gmail.com)
