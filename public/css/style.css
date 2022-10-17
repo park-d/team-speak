@@ -373,6 +373,7 @@ legend {
 
 .login-form {
     background-color: var(--black);
+    border: 1px solid var(--black)
 }
 
 .article-title {
@@ -388,7 +389,8 @@ legend {
 
 .preferences-modal-title {
     background-color: var(--off-black);
-    color: var(--theme)
+    color: var(--theme);
+    font-weight: var(--rubik-bold);
 }
 
 .preferences-modal-values {
