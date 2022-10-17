@@ -410,6 +410,11 @@ p {
 
 .user-dashboard-article {
     background-color: var(--black);
+    border: 1px solid var(--black);
+}
+
+.tabs-content {
+    border: 1px solid var(--black);
 }
 
 .preferences-modal-title {
@@ -424,6 +429,7 @@ p {
 
 .preferences-modal {
     background-color: var(--black);
+    border: 1px solid var(--black);
 }
 
 .user-dash-title-wrap {
@@ -462,6 +468,7 @@ p {
 
 .post-modal {
     background-color: var(--black);
+    border: 1px solid var(--off-black);
 }
 
 .post-modal-title {
@@ -509,16 +516,44 @@ p {
 
 
 .tabs-title-container {
-    background-color: var(--black);
+    background-color: var(--off-black);
+    border: 1px solid var(--off-black)
 }
 
 .tabs-title {
+    background-color: var(--off-black);
+}
+
+.tabs-title a:link {
     color: var(--theme);
+    font-weight: var(--rubik-bold);
+}
+
+.tabs-title a:visited {
+    color: var(--theme);
+    font-weight: var(--rubik-bold);
+}
+
+.tabs-title a:hover {
+    background-color: var(--theme);
+    color: var(--black);
+    font-weight: var(--rubik-bold);
+}
+
+.tab-title a:active {
+    background-color: var(--theme);
+    color: red;
     font-weight: var(--rubik-bold);
 }
 
 .tabs-content {
     background-color: var(--off-black);
+}
+
+.post-btn-container {
+    text-align: right;
+    position: flex;
+    flex-wrap: wrap;
 }
 
 .logout-page-img {
