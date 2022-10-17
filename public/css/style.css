@@ -410,6 +410,11 @@ p {
 
 .user-dashboard-article {
     background-color: var(--black);
+    border: 1px solid var(--black);
+}
+
+.tabs-content {
+    border: 1px solid var(--black);
 }
 
 .preferences-modal-title {
@@ -509,7 +514,8 @@ p {
 
 
 .tabs-title-container {
-    background-color: var(--black);
+    background-color: var(--off-black);
+    border: 1px solid var(--off-black)
 }
 
 .tabs-title {
@@ -519,6 +525,12 @@ p {
 
 .tabs-content {
     background-color: var(--off-black);
+}
+
+.post-btn-container {
+    text-align: right;
+    position: flex;
+    flex-wrap: wrap;
 }
 
 .logout-page-img {
