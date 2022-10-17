@@ -129,7 +129,7 @@ router.get('/userDashboard', async (req, res) => {
             const wellnessArticles = [];
             const travelArticles = [];
             const stylebeautyArticles = [];
-            const healthylivingArticles = [];
+            const techArticles = [];
             const parentingArticles = [];
             const queervoicesArticles = [];
             const fooddrinkArticles = [];
@@ -157,8 +157,8 @@ router.get('/userDashboard', async (req, res) => {
                     case "STYLE & BEAUTY":
                         stylebeautyArticles.push(article[i]);
                         break;
-                    case "HEALTHY LIVING":
-                        healthylivingArticles.push(article[i]);
+                    case "TECH":
+                       techArticles.push(article[i]);
                         break;
                     case "PARENTING":
                         parentingArticles.push(article[i]);
@@ -192,7 +192,7 @@ router.get('/userDashboard', async (req, res) => {
                 }
             }
             // rendering the userDashboard handlebars view and passing the reformatted data to it
-            res.render("userDashboard", {sportsArticles, politicsArticles, wellnessArticles, travelArticles, stylebeautyArticles, healthylivingArticles, parentingArticles, queervoicesArticles, fooddrinkArticles, businessArticles, comedyArticles, blackvoicesArticles, cultureartsArticles, weirdnewsArticles, entertainmentArticles, loggedIn: req.session.loggedIn});
+            res.render("userDashboard", {sportsArticles, politicsArticles, wellnessArticles, travelArticles, stylebeautyArticles, techArticles, parentingArticles, queervoicesArticles, fooddrinkArticles, businessArticles, comedyArticles, blackvoicesArticles, cultureartsArticles, weirdnewsArticles, entertainmentArticles, loggedIn: req.session.loggedIn});
         }
     } catch(err) {
         res.status(500).json(err);

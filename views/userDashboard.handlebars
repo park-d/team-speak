@@ -11,7 +11,7 @@
       <input id="checkbox3" type="checkbox" value="3"><label for="checkbox3">Wellness</label>
       <input id="checkbox4" type="checkbox" value="4"><label for="checkbox4">Travel</label>
       <input id="checkbox5" type="checkbox" value="5"><label for="checkbox5">Style & Beauty </label>
-      <input id="checkbox6" type="checkbox" value="6"><label for="checkbox6">Healthy Living</label>
+      <input id="checkbox6" type="checkbox" value="6"><label for="checkbox6">Tech</label>
       <input id="checkbox7" type="checkbox" value="7"><label for="checkbox7">Parenting</label>
       <input id="checkbox8" type="checkbox" value="8"><label for="checkbox8">Queer Voices</label>
       <input id="checkbox9" type="checkbox" value="9"><label for="checkbox9">Food & Drink</label>
@@ -45,8 +45,8 @@
   {{#if stylebeautyArticles}}
   <li class="tabs-title"><a href="#style-beauty">Style & Beauty</a></li>
   {{/if}}
-  {{#if healthylivingArticles}}
-  <li class="tabs-title"><a href="#healthy-living">Healthy Living</a></li>
+  {{#if techArticles}}
+  <li class="tabs-title"><a href="#tech">Tech</a></li>
   {{/if}}
   {{#if parentingArticles}}
   <li class="tabs-title"><a href="#parenting">Parenting</a></li>
@@ -217,8 +217,8 @@
     </div>
     {{/each}}
   </div>
-  <div class="tabs-panel" id="healthy-living">
-    {{#each healthylivingArticles}}
+  <div class="tabs-panel" id="tech">
+    {{#each techArticles}}
     <div class="card column medium-10 cell user-dashboard-article">
       <div class="card-divider article-title">
         <h4>
