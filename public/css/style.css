@@ -344,6 +344,10 @@ legend {
     color: var(--theme);
 }
 
+.login-title h2 {
+    color: var(--theme)
+}
+
 .login-btn-container {
     flex-direction: row;
     justify-content: space-between;
@@ -356,7 +360,10 @@ legend {
     justify-content: center;
     align-items: center;
     font-weight: var(--rubik-bold);
-    color: var(--theme);
+}
+
+.signup-page-title h2 {
+    color: var(--theme)
 }
 
 .signup-page-buttons {
@@ -423,6 +430,7 @@ legend {
     color: var(--theme)
 }
 
+
 .footer-bar {
     margin: 16px 0;
     background-color: var(--off-theme);
@@ -451,4 +459,45 @@ legend {
 }
 
 /* ------------- ------------- */
+
+
+.tabs-title-container {
+    background-color: var(--black);
+}
+
+.tabs-title {
+    color: var(--theme);
+    font-weight: var(--rubik-bold);
+}
+
+.tabs-content {
+    background-color: var(--off-black);
+}
+
+.logout-page-img {
+    width: 75%;
+    height: auto;
+}
+
+.logout-card-section {
+    background-color: var(--off-black);
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.img-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#logout-pg-card {
+    border: 1px solid var(--off-black);
+}
+
+.logout-pg-text {
+    text-align: center;
+    color: var(--theme);
+}
 
