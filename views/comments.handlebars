@@ -5,7 +5,7 @@
                 <div class="card-section">
 
                     <div class="article-post-content">
-                        <h4 class="article-post-title">{{postData.title}}</h4>
+                        <h3 class="article-post-title">{{postData.title}}</h3>
                         <p>{{postData.body}}</p>
                         <a href={{postData.link}} target="_blank" class="article-link form-link">Read the
                             article</a>
@@ -14,23 +14,26 @@
                         </button>
                     </div>
                     <div class="article-post-details">
-                        <p class="post-body"> Posted by: {{postData.user.username}}, {{format_date_time
+                        <p class="post-body"> Posted by: <a href="/teamDashboard/{{username}}"
+                                class="form-link">{{postData.user.username}}</a>,
+                            {{format_date_time
                             postData.createdAt}}
                         </p>
                     </div>
                 </div>
-                <div class="reveal" id="postModal" data-reveal>
-                    <form>
-                        <h4 data-id={{postData.post_id}} id="post-id"> Add your comment... </h4>
-                        <textarea type="text" placeholder="Enter comment here" class="form-input" name="comment-input"
-                            required></textarea>
-                        <a href="" class="submit" id="submit-comment">Submit Comment!</a>
+                <div class="reveal comment-form-wrap" id="postModal" data-reveal>
+                    <form class="comment-form">
+                        <h4 data-id={{postData.post_id}} id="post-id" class="comment-title"> Add your comment</h4>
+                        <textarea type="text" placeholder="Enter comment here" class="form-input comment-input"
+                            name="comment-input" required></textarea>
+                        <a href="" class="form-btn form-link" id="submit-comment">Post comment</a>
                     </form>
                 </div>
                 {{#if postData.comments}}
                 <section>
                     <div>
-                        <h5>Team Comments</h5>
+                        <h4>Team Comments</h4>
+                        <div class="footer-bar"></div>
                     </div>
                     {{#each postData.comments}}
                     <div class="card comment-card">
