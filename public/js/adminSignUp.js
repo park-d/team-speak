@@ -6,7 +6,6 @@ const registerFormHandler = async (event) => {
     // grabbing the data that is entered
     const company_name = $('#company-name-signup').val().trim();
     const teamObject = $('.company-team-signup');
-    console.log(teamObject.eq(0).val())
     let team_names = [];
     for(let index = 0; index < teamObject.length; index++) {
         if(teamObject.eq(0).val() != "") {
