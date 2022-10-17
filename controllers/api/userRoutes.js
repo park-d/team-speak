@@ -127,14 +127,17 @@ router.post('/logout', (req, res) => {
         
 router.post('/preferences', async (req, res) => {
     try {
-        console.log(req.session.user_id);
+        Preferences.destroy({
+            where: {
+                user_id: req.session.user_id
+            }
+        })
         const organizedPreferenceArray = req.body.user_preferences.map(preference => {
             return {
                 category_id: parseInt(preference),
                 user_id: req.session.user_id,
             };
         });
-        console.log(organizedPreferenceArray);
         Preferences.bulkCreate(organizedPreferenceArray);
         res.json('Thank you for saving your preference!');
     } catch(err) {
