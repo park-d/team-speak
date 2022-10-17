@@ -21,6 +21,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/style.css" type="text/css">
+
 </head>
 
 </header>
@@ -29,9 +30,10 @@
     <div>
         <header class="custom-header">
             <h1>
-                <a class="custom-title" href="/">TeamSpeak</a>
+                <a class="custom-title" href="/"><span class="logo-bracket">[</span> TS <span
+                        class="logo-bracket">]</span></a>
             </h1>
-            <ul class="menu">
+            <ul class="nav menu">
                 {{#if loggedIn}}
                 <li><a href="/teamDashboard" class="user-team-btn">Your Team</a></li>
                 <li><a href="/userDashboard" class="user-news-btn">Your News</a></li>
@@ -41,11 +43,9 @@
                 <li><a href="/signup" class="sign-up-btn">Sign Up</a></li>
                 <li><a href="/login" class="login-btn">Login</a></li>
                 {{/if}}
-
             </ul>
-
-
         </header>
+
         <main>
             {{{ body }}}
         </main>

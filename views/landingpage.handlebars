@@ -1,46 +1,102 @@
-<div class="landing-container landing">
+<div class="landing-container">
+
+    {{!-- HERO SECTION --}}
     <div class="hero-container">
-
         <div class="media-object stack-for-small">
             <div class="media-object-section">
-                <div class="">
-                    <img src="/images/heroImage-unsplash-mario-gogh.jpg" class="hero-img">
+                <div class="landing-img">
+                    <img src="/images/heroImage-unsplash-mario-gogh.jpg" class="landing-img">
                 </div>
             </div>
             <div class="sub-container">
-                <div class="media-object-section">
-                    <h4>TeamSpeak is your Team's digital cohesion location!</h4>
-                    <p>Chat about current events with your Team</p>
-                    <a class="hero-btn">Join the conversation!</a>
+                <div class="media-object-section caption-section">
+                    <h3><span class="word-change">TeamSpeak</span> is your digital cohesion location.</h3>
+                    <p>With your coworkers and news all in one place, stay connected like never before.</p>
+                    <a class="form-btn" href="/signup">Join the conversation</a>
                 </div>
             </div>
         </div>
     </div>
+    {{!-- YOUR CIRCLE????? --}}
 
+    {{!-- INFORMATION SECTION --}}
     <div class="info-container">
-        <div class="media-object stack-for-small">
+        <div class="media-object stack-for-small info-section">
             <div class="sub-container">
                 <div class="media-object-section">
-                    <h4>Build a cohesive Team!</h4>
-                    <p>We've seen how forced team building creates diversion amongst Teams</p>
+                    <h4><span class="word-change">Team building,</span> no hassle included.</h4>
+                    <p>That coffee station conversation just got easier. TeamSpeak engages your team on industry, world,
+                        and hot topic news to keep your team on the same page.</p>
+                </div>
+            </div>
+            <div class="media-object-section">
+                <div>
+                    <img src="/images/teamBuildingImage-unsplash-annie-spratt.jpg" class="info-img">
+                </div>
+            </div>
+        </div>
+
+        <div class="media-object stack-for-small info-section">
+            <div class="media-object-section">
+                <div>
+                    <img src="images/newsImage-unsplash-matthew-guay.jpg" class="info-img">
+                </div>
+            </div>
+            <div class="sub-container">
+                <div class="media-object-section">
+                    <h4>Own your news feed and keep it exclusively <span class="word-change">you.</span></h4>
+                    <p>Preferences make you unique. Change the kind of news you like to read right from Your
+                        Dashboard.
+                        Don't worry, you can change these whenever you like.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="media-object stack-for-small info-last-section">
+            <div class="sub-container">
+                <div class="media-object-section">
+                    <h4><span class="word-change">Find others</span> who share your interests and opinions.</h4>
+                    <p>With your Team Dashboard, see what your team members are saying about the latest
+                        headlines, and
+                        engage in conversation with your comments.</p>
                 </div>
             </div>
             <div class="media-object-section">
                 <div class="">
-                    <img src="/images/heroImage-unsplash-mario-gogh.jpg" class="hero-img">
+                    <img src="/images/connectedImage-unsplash-kevin-laminto.jpg" class="info-img">
                 </div>
             </div>
         </div>
     </div>
 
-    <div>
-        <h2>Speak about what you want!</h2>
-        <p>Introduce your Team to topics meaningful to you.
-        <p>
-            {{!-- cheesy photo --}}
+    {{!-- METRICS SECTION --}}
+
+    <div class="metrics-container">
+        <div class="metric">
+            <h4>87%</h4>
+            <p>of users say they find work more enjoyable.</p>
+        </div>
+        <div class="metric">
+            <h4>91%</h4>
+            <p>say their work relations have improved.</p>
+        </div>
+        <div class="metric">
+            <h4>82%</h4>
+            <p>feel more engaged with their team members.</p>
+        </div>
     </div>
 
-    <div>
-        <a class="button primary" href="/signup">SignUp/Login</a>
+    {{!-- CALL TO ACTION - AFTER THE USER SEES THE BENEFITS OF THE WEBSITE, THEY ARE CALLED TO SIGN UP --}}
+    <div class="call-to-action">
+        <div class="sign-up-call">
+            <p>Time to connect!</p>
+            <a class="form-btn" href="/signup">Sign Up</a>
+        </div>
+        <div class="register-call">
+            <p>Ready to bring your teams together?</p>
+            <a href="/signup-admin" class="form-btn">Register your company</a>
+        </div>
     </div>
+
 </div>
