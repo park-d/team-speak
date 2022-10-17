@@ -119,7 +119,6 @@ router.get('/userDashboard', async (req, res) => {
             const allNews = await News.findAll({
                 where: {
                     category: categoryParams,
-                    article_id: [130, 132, 133, 134, 2000, 893]
                 }
             });
             //because of the way sequelize returns data, we have to trim unwanted formatting (nested objects) with plain: true
@@ -130,15 +129,15 @@ router.get('/userDashboard', async (req, res) => {
             const wellnessArticles = [];
             const travelArticles = [];
             const stylebeautyArticles = [];
-            const healthylivingArticles = [];
+            const techArticles = [];
             const parentingArticles = [];
             const queervoicesArticles = [];
             const fooddrinkArticles = [];
             const businessArticles = [];
             const comedyArticles = [];
             const blackvoicesArticles = [];
-            const homelivingArticles = [];
-            const parentsArticles = [];
+            const cultureartsArticles = [];
+            const weirdnewsArticles = [];
             const entertainmentArticles = [];
 
             for(let i = 0; i < article.length; i++) {
@@ -158,8 +157,8 @@ router.get('/userDashboard', async (req, res) => {
                     case "STYLE & BEAUTY":
                         stylebeautyArticles.push(article[i]);
                         break;
-                    case "HEALTHY LIVING":
-                        healthylivingArticles.push(article[i]);
+                    case "TECH":
+                       techArticles.push(article[i]);
                         break;
                     case "PARENTING":
                         parentingArticles.push(article[i]);
@@ -179,11 +178,11 @@ router.get('/userDashboard', async (req, res) => {
                     case "BLACK VOICES":
                        blackvoicesArticles.push(article[i]);
                         break;
-                    case "HOME & LIVING":
-                        homelivingArticles.push(article[i]);
+                    case "CULTURE & ARTS":
+                        cultureartsArticles.push(article[i]);
                         break;
-                    case "PARENTS":
-                        parentsArticles.push(article[i]);
+                    case "WEIRD NEWS":
+                        weirdnewsArticles.push(article[i]);
                         break;
                     case "ENTERTAINMENT":
                         entertainmentArticles.push(article[i]);
@@ -193,7 +192,7 @@ router.get('/userDashboard', async (req, res) => {
                 }
             }
             // rendering the userDashboard handlebars view and passing the reformatted data to it
-            res.render("userDashboard", {sportsArticles, politicsArticles, wellnessArticles, travelArticles, stylebeautyArticles, healthylivingArticles, parentingArticles, queervoicesArticles, fooddrinkArticles, businessArticles, comedyArticles, blackvoicesArticles, homelivingArticles, parentsArticles, entertainmentArticles, loggedIn: req.session.loggedIn});
+            res.render("userDashboard", {sportsArticles, politicsArticles, wellnessArticles, travelArticles, stylebeautyArticles, techArticles, parentingArticles, queervoicesArticles, fooddrinkArticles, businessArticles, comedyArticles, blackvoicesArticles, cultureartsArticles, weirdnewsArticles, entertainmentArticles, loggedIn: req.session.loggedIn});
         }
     } catch(err) {
         res.status(500).json(err);

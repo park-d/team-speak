@@ -8,10 +8,13 @@ const registerFormHandler = async (event) => {
     const teamObject = $('.company-team-signup');
     let team_names = [];
     for(let index = 0; index < teamObject.length; index++) {
-        team_names.push(teamObject.eq(index).val());
+        if(teamObject.eq(0).val() != "") {
+            team_names.push(teamObject.eq(index).val());
+        }
     };
     // we need to fetch data from the api and make a post request when we click on the signup button
-    if (company_name && team_names) {
+    console.log(team_names.length)
+    if(company_name && team_names.length > 0) {
         const response = await fetch('/api/users/register', {
             method: 'POST',
             body: JSON.stringify({ company_name, team_names }),
