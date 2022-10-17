@@ -84,24 +84,25 @@
     <div class="card column medium-10 cell user-dashboard-article">
       <div class="card-divider article-title">
         <h4>
-          <a href={{this.link}} class="form-link" target="_blank">
-            {{this.headline}}
+          <a href={{link}} class="form-link" target="_blank">
+            {{headline}}
           </a>
         </h4>
-        <button data-open="postModal{{this.article_id}}">
+        <button data-open="postModal{{article_id}}">
           <i class="fa-solid fa-square-plus custom-plus"></i>
         </button>
       </div>
       <div class="card-section">
-        <p>{{this.short_description}}</p>
+        <p>{{short_description}}</p>
       </div>
-      <div class="reveal post-modal" id="postModal{{this.article_id}}" data-reveal>
+      <div class="reveal post-modal" id="postModal{{article_id}}" data-reveal>
         <form class="post-modal">
-          <h4 data-id={{this.article_id}} id="article-id" class="post-modal-title">{{this.headline}} </h4>
-          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
-          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+          <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title{{article_id}}"
+            required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input{{article_id}}"
             required></textarea>
-          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+          <button class="form-btn" id="submit-post{{article_id}}">Submit Post!</button>
         </form>
       </div>
     </div>
@@ -112,24 +113,25 @@
     <div class="card column medium-10 cell user-dashboard-article">
       <div class="card-divider article-title">
         <h4>
-          <a href={{this.link}} class="form-link" target="_blank">
-            {{this.headline}}
+          <a href={{link}} class="form-link" target="_blank">
+            {{headline}}
           </a>
         </h4>
-        <button data-open="postModal{{this.article_id}}">
+        <button data-open="postModal{{article_id}}">
           <i class="fa-solid fa-square-plus custom-plus"></i>
         </button>
       </div>
       <div class="card-section">
-        <p>{{this.short_description}}</p>
+        <p>{{short_description}}</p>
       </div>
-      <div class="reveal post-modal" id="postModal{{this.article_id}}" data-reveal>
+      <div class="reveal post-modal" id="postModal{{article_id}}" data-reveal>
         <form class="post-modal">
-          <h4 data-id={{this.article_id}} id="article-id" class="post-modal-title">{{this.headline}} </h4>
-          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
-          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+          <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title{{article_id}}"
+            required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input{{article_id}}"
             required></textarea>
-          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+          <button class="form-btn" id="submit-post{{article_id}}">Submit Post!</button>
         </form>
       </div>
     </div>
@@ -140,24 +142,25 @@
     <div class="card column medium-10 cell user-dashboard-article">
       <div class="card-divider article-title">
         <h4>
-          <a href={{this.link}} class="form-link" target="_blank">
-            {{this.headline}}
+          <a href={{link}} class="form-link" target="_blank">
+            {{headline}}
           </a>
         </h4>
-        <button data-open="postModal{{this.article_id}}">
+        <button data-open="postModal{{article_id}}">
           <i class="fa-solid fa-square-plus custom-plus"></i>
         </button>
       </div>
       <div class="card-section">
-        <p>{{this.short_description}}</p>
+        <p>{{short_description}}</p>
       </div>
-      <div class="reveal post-modal" id="postModal{{this.article_id}}" data-reveal>
+      <div class="reveal post-modal" id="postModal{{article_id}}" data-reveal>
         <form class="post-modal">
-          <h4 data-id={{this.article_id}} id="article-id" class="post-modal-title">{{this.headline}} </h4>
-          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
-          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+          <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title{{article_id}}"
+            required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input{{article_id}}"
             required></textarea>
-          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+          <button class="form-btn" id="submit-post{{article_id}}">Submit Post!</button>
         </form>
       </div>
     </div>
@@ -168,24 +171,25 @@
     <div class="card column medium-10 cell user-dashboard-article">
       <div class="card-divider article-title">
         <h4>
-          <a href={{this.link}} class="form-link" target="_blank">
-            {{this.headline}}
+          <a href={{link}} class="form-link" target="_blank">
+            {{headline}}
           </a>
         </h4>
-        <button data-open="postModal{{this.article_id}}">
+        <button data-open="postModal{{article_id}}">
           <i class="fa-solid fa-square-plus custom-plus"></i>
         </button>
       </div>
       <div class="card-section">
-        <p>{{this.short_description}}</p>
+        <p>{{short_description}}</p>
       </div>
-      <div class="reveal post-modal" id="postModal{{this.article_id}}" data-reveal>
+      <div class="reveal post-modal" id="postModal{{article_id}}" data-reveal>
         <form class="post-modal">
-          <h4 data-id={{this.article_id}} id="article-id" class="post-modal-title">{{this.headline}} </h4>
-          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
-          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+          <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title{{article_id}}"
+            required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input{{article_id}}"
             required></textarea>
-          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+          <button class="form-btn" id="submit-post{{article_id}}">Submit Post!</button>
         </form>
       </div>
     </div>
@@ -196,24 +200,25 @@
     <div class="card column medium-10 cell user-dashboard-article">
       <div class="card-divider article-title">
         <h4>
-          <a href={{this.link}} class="form-link" target="_blank">
-            {{this.headline}}
+          <a href={{link}} class="form-link" target="_blank">
+            {{headline}}
           </a>
         </h4>
-        <button data-open="postModal{{this.article_id}}">
+        <button data-open="postModal{{article_id}}">
           <i class="fa-solid fa-square-plus custom-plus"></i>
         </button>
       </div>
       <div class="card-section">
-        <p>{{this.short_description}}</p>
+        <p>{{short_description}}</p>
       </div>
-      <div class="reveal post-modal" id="postModal{{this.article_id}}" data-reveal>
+      <div class="reveal post-modal" id="postModal{{article_id}}" data-reveal>
         <form class="post-modal">
-          <h4 data-id={{this.article_id}} id="article-id" class="post-modal-title">{{this.headline}} </h4>
-          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
-          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+          <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title{{article_id}}"
+            required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input{{article_id}}"
             required></textarea>
-          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+          <button class="form-btn" id="submit-post{{article_id}}">Submit Post!</button>
         </form>
       </div>
     </div>
@@ -224,24 +229,25 @@
     <div class="card column medium-10 cell user-dashboard-article">
       <div class="card-divider article-title">
         <h4>
-          <a href={{this.link}} class="form-link" target="_blank">
-            {{this.headline}}
+          <a href={{link}} class="form-link" target="_blank">
+            {{headline}}
           </a>
         </h4>
-        <button data-open="postModal{{this.article_id}}">
+        <button data-open="postModal{{article_id}}">
           <i class="fa-solid fa-square-plus custom-plus"></i>
         </button>
       </div>
       <div class="card-section">
-        <p>{{this.short_description}}</p>
+        <p>{{short_description}}</p>
       </div>
-      <div class="reveal post-modal" id="postModal{{this.article_id}}" data-reveal>
+      <div class="reveal post-modal" id="postModal{{article_id}}" data-reveal>
         <form class="post-modal">
-          <h4 data-id={{this.article_id}} id="article-id" class="post-modal-title">{{this.headline}} </h4>
-          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
-          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+          <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title{{article_id}}"
+            required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input{{article_id}}"
             required></textarea>
-          <a href="" class="form-btn" id="submit-post">Submit Post!</a>
+          <button class="form-btn" id="submit-post{{article_id}}">Submit Post!</button>
         </form>
       </div>
     </div>
@@ -252,24 +258,25 @@
     <div class="card column medium-10 cell user-dashboard-article">
       <div class="card-divider article-title">
         <h4>
-          <a href={{this.link}} class="form-link" target="_blank">
-            {{this.headline}}
+          <a href={{link}} class="form-link" target="_blank">
+            {{headline}}
           </a>
         </h4>
-        <button data-open="postModal{{this.article_id}}">
+        <button data-open="postModal{{article_id}}">
           <i class="fa-solid fa-square-plus custom-plus"></i>
         </button>
       </div>
       <div class="card-section">
-        <p>{{this.short_description}}</p>
+        <p>{{short_description}}</p>
       </div>
-      <div class="reveal post-modal" id="postModal{{this.article_id}}" data-reveal>
+      <div class="reveal post-modal" id="postModal{{article_id}}" data-reveal>
         <form class="post-modal">
-          <h4 data-id={{this.article_id}} id="article-id" class="post-modal-title">{{this.headline}} </h4>
-          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
-          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+          <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title{{article_id}}"
+            required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input{{article_id}}"
             required></textarea>
-          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+          <button class="form-btn" id="submit-post{{article_id}}">Submit Post!</button>
         </form>
       </div>
     </div>
@@ -280,24 +287,25 @@
     <div class="card column medium-10 cell user-dashboard-article">
       <div class="card-divider article-title">
         <h4>
-          <a href={{this.link}} class="form-link" target="_blank">
-            {{this.headline}}
+          <a href={{link}} class="form-link" target="_blank">
+            {{headline}}
           </a>
         </h4>
-        <button data-open="postModal{{this.article_id}}">
+        <button data-open="postModal{{article_id}}">
           <i class="fa-solid fa-square-plus custom-plus"></i>
         </button>
       </div>
       <div class="card-section">
-        <p>{{this.short_description}}</p>
+        <p>{{short_description}}</p>
       </div>
-      <div class="reveal post-modal" id="postModal{{this.article_id}}" data-reveal>
+      <div class="reveal post-modal" id="postModal{{article_id}}" data-reveal>
         <form class="post-modal">
-          <h4 data-id={{this.article_id}} id="article-id" class="post-modal-title">{{this.headline}} </h4>
-          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
-          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+          <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title{{article_id}}"
+            required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input{{article_id}}"
             required></textarea>
-          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+          <button class="form-btn" id="submit-post{{article_id}}">Submit Post!</button>
         </form>
       </div>
     </div>
@@ -308,24 +316,25 @@
     <div class="card column medium-10 cell user-dashboard-article">
       <div class="card-divider article-title">
         <h4>
-          <a href={{this.link}} class="form-link" target="_blank">
-            {{this.headline}}
+          <a href={{link}} class="form-link" target="_blank">
+            {{headline}}
           </a>
         </h4>
-        <button data-open="postModal{{this.article_id}}">
+        <button data-open="postModal{{article_id}}">
           <i class="fa-solid fa-square-plus custom-plus"></i>
         </button>
       </div>
       <div class="card-section">
-        <p>{{this.short_description}}</p>
+        <p>{{short_description}}</p>
       </div>
-      <div class="reveal post-modal" id="postModal{{this.article_id}}" data-reveal>
+      <div class="reveal post-modal" id="postModal{{article_id}}" data-reveal>
         <form class="post-modal">
-          <h4 data-id={{this.article_id}} id="article-id" class="post-modal-title">{{this.headline}} </h4>
-          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
-          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+          <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title{{article_id}}"
+            required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input{{article_id}}"
             required></textarea>
-          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+          <button class="form-btn" id="submit-post{{article_id}}">Submit Post!</button>
         </form>
       </div>
     </div>
@@ -336,24 +345,25 @@
     <div class="card column medium-10 cell user-dashboard-article">
       <div class="card-divider article-title">
         <h4>
-          <a href={{this.link}} class="form-link" target="_blank">
-            {{this.headline}}
+          <a href={{link}} class="form-link" target="_blank">
+            {{headline}}
           </a>
         </h4>
-        <button data-open="postModal{{this.article_id}}">
+        <button data-open="postModal{{article_id}}">
           <i class="fa-solid fa-square-plus custom-plus"></i>
         </button>
       </div>
       <div class="card-section">
-        <p>{{this.short_description}}</p>
+        <p>{{short_description}}</p>
       </div>
-      <div class="reveal post-modal" id="postModal{{this.article_id}}" data-reveal>
+      <div class="reveal post-modal" id="postModal{{article_id}}" data-reveal>
         <form class="post-modal">
-          <h4 data-id={{this.article_id}} id="article-id" class="post-modal-title">{{this.headline}} </h4>
-          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
-          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+          <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title{{article_id}}"
+            required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input{{article_id}}"
             required></textarea>
-          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+          <button class="form-btn" id="submit-post{{article_id}}">Submit Post!</button>
         </form>
       </div>
     </div>
@@ -364,24 +374,25 @@
     <div class="card column medium-10 cell user-dashboard-article">
       <div class="card-divider article-title">
         <h4>
-          <a href={{this.link}} class="form-link" target="_blank">
-            {{this.headline}}
+          <a href={{link}} class="form-link" target="_blank">
+            {{headline}}
           </a>
         </h4>
-        <button data-open="postModal{{this.article_id}}">
+        <button data-open="postModal{{article_id}}">
           <i class="fa-solid fa-square-plus custom-plus"></i>
         </button>
       </div>
       <div class="card-section">
-        <p>{{this.short_description}}</p>
+        <p>{{short_description}}</p>
       </div>
-      <div class="reveal post-modal" id="postModal{{this.article_id}}" data-reveal>
+      <div class="reveal post-modal" id="postModal{{article_id}}" data-reveal>
         <form class="post-modal">
-          <h4 data-id={{this.article_id}} id="article-id" class="post-modal-title">{{this.headline}} </h4>
-          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
-          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+          <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title{{article_id}}"
+            required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input{{article_id}}"
             required></textarea>
-          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+          <button class="form-btn" id="submit-post{{article_id}}">Submit Post!</button>
         </form>
       </div>
     </div>
@@ -392,24 +403,25 @@
     <div class="card column medium-10 cell user-dashboard-article">
       <div class="card-divider article-title">
         <h4>
-          <a href={{this.link}} class="form-link" target="_blank">
-            {{this.headline}}
+          <a href={{link}} class="form-link" target="_blank">
+            {{headline}}
           </a>
         </h4>
-        <button data-open="postModal{{this.article_id}}">
+        <button data-open="postModal{{article_id}}">
           <i class="fa-solid fa-square-plus custom-plus"></i>
         </button>
       </div>
       <div class="card-section">
-        <p>{{this.short_description}}</p>
+        <p>{{short_description}}</p>
       </div>
-      <div class="reveal post-modal" id="postModal{{this.article_id}}" data-reveal>
+      <div class="reveal post-modal" id="postModal{{article_id}}" data-reveal>
         <form class="post-modal">
-          <h4 data-id={{this.article_id}} id="article-id" class="post-modal-title">{{this.headline}} </h4>
-          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
-          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+          <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title{{article_id}}"
+            required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input{{article_id}}"
             required></textarea>
-          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+          <button class="form-btn" id="submit-post{{article_id}}">Submit Post!</button>
         </form>
       </div>
     </div>
@@ -420,24 +432,25 @@
     <div class="card column medium-10 cell user-dashboard-article">
       <div class="card-divider article-title">
         <h4>
-          <a href={{this.link}} class="form-link" target="_blank">
-            {{this.headline}}
+          <a href={{link}} class="form-link" target="_blank">
+            {{headline}}
           </a>
         </h4>
-        <button data-open="postModal{{this.article_id}}">
+        <button data-open="postModal{{article_id}}">
           <i class="fa-solid fa-square-plus custom-plus"></i>
         </button>
       </div>
       <div class="card-section">
-        <p>{{this.short_description}}</p>
+        <p>{{short_description}}</p>
       </div>
-      <div class="reveal post-modal" id="postModal{{this.article_id}}" data-reveal>
+      <div class="reveal post-modal" id="postModal{{article_id}}" data-reveal>
         <form class="post-modal">
-          <h4 data-id={{this.article_id}} id="article-id" class="post-modal-title">{{this.headline}} </h4>
-          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
-          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+          <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title{{article_id}}"
+            required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input{{article_id}}"
             required></textarea>
-          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+          <button class="form-btn" id="submit-post{{article_id}}">Submit Post!</button>
         </form>
       </div>
     </div>
@@ -448,24 +461,24 @@
     <div class="card column medium-10 cell user-dashboard-article">
       <div class="card-divider article-title">
         <h4>
-          <a href={{this.link}} class="form-link" target="_blank">
-            {{this.headline}}
+          <a href={{link}} class="form-link" target="_blank">
+            {{headline}}
           </a>
         </h4>
-        <button data-open="postModal{{this.article_id}}">
+        <button data-open="postModal{{article_id}}">
           <i class="fa-solid fa-square-plus custom-plus"></i>
         </button>
       </div>
       <div class="card-section">
-        <p>{{this.short_description}}</p>
+        <p>{{short_description}}</p>
       </div>
-      <div class="reveal post-modal" id="postModal{{this.article_id}}" data-reveal>
+      <div class="reveal post-modal" id="postModal{{article_id}}" data-reveal>
         <form class="post-modal">
-          <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{this.headline}} </h4>
+          <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
           <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title{{article_id}}" required>
           <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input{{article_id}}"
             required></textarea>
-          <button onclick= "newPostHandler" class="form-btn" id="submit-post{{article_id}}">Submit Post!</button>
+          <button class="form-btn" id="submit-post{{article_id}}">Submit Post!</button>
         </form>
       </div>
     </div>
@@ -476,24 +489,25 @@
     <div class="card column medium-10 cell user-dashboard-article">
       <div class="card-divider article-title">
         <h4>
-          <a href={{this.link}} class="form-link" target="_blank">
-            {{this.headline}}
+          <a href={{link}} class="form-link" target="_blank">
+            {{headline}}
           </a>
         </h4>
-        <button data-open="postModal{{this.article_id}}">
+        <button data-open="postModal{{article_id}}">
           <i class="fa-solid fa-square-plus custom-plus"></i>
         </button>
       </div>
       <div class="card-section">
-        <p>{{this.short_description}}</p>
+        <p>{{short_description}}</p>
       </div>
-      <div class="reveal post-modal" id="postModal{{this.article_id}}" data-reveal>
+      <div class="reveal post-modal" id="postModal{{article_id}}" data-reveal>
         <form class="post-modal">
-          <h4 data-id={{this.article_id}} id="article-id" class="post-modal-title">{{this.headline}} </h4>
-          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
-          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+          <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title{{article_id}}"
+            required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input{{article_id}}"
             required></textarea>
-          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+          <button class="form-btn" id="submit-post{{article_id}}">Submit Post!</button>
         </form>
       </div>
     </div>

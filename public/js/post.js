@@ -1,6 +1,4 @@
 //***************** THESE NEED TO BE UPDATED********************//
-const newPostBtn = $('#submit-post');
-
 // a function that will handle adding a new post for the user
 const newPostHandler = async (event) => {
     event.preventDefault();
