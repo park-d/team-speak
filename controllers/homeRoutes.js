@@ -71,8 +71,6 @@ router.get('/posts/:id', async (req, res) => {
 //         const teamPosts = await Post.findByPk({
 //             // where: {
 
-// }
-
 //         });
 
 //         // Serialize data so the template can read it

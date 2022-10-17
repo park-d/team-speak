@@ -1,12 +1,14 @@
-<form>
+<form class="card login-form">
 
-  <div>
-    <h3>Signup Below!</h3>
-    <a href="/register">Registering a Company?</a>
+  <div class="card-divider signup-page-title">
+    <h2>Signup Below!</h2>
+    <a href="/register">
+      <p>Registering a Company?</p>
+    </a>
   </div>
-  
-  <div class="grid-container">
-    <div class="grid-x grid-padding-x">
+
+  <div class="grid-container card-section">
+    <div class="grid-x grid-padding-x medium-up-1 large-up-2 small-up-1">
       <div class="medium-6 cell">
         <label for="user-company">What is the name of the company you work at?
           <input type="text" placeholder="Company Name" class="form-input" id="user-company" required>
@@ -32,8 +34,10 @@
           <input type="password" placeholder="Your Password" class="form-input" id="password-signup" required>
         </label>
       </div>
-      <button class="submit success button" id="signup-button">Signup!</button>
+      <div class="login-signup-buttons card-section grid-x grid-padding-x align-center">
+      <button class="form-btn" id="signup-button">Signup!</button>
       <a href="/login">Already have an account? Log in here!</a>
+      </div>
     </div>
 </form>
 

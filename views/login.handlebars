@@ -1,24 +1,27 @@
-<form>
-  <div>
-    <h3>Login Below!</h3>
+<form class="card login-form">
+  <div class="card-divider login-title">
+    <h2>Login Below!</h2>
   </div>
-  <div class="grid-container">
-    <div class="grid-x grid-padding-x">
-      <div class="medium-6 cell">
+  <div class="grid-container card-section">
+    <div class="grid-x grid-padding-x grid-margin-x small-up1 medium-up-2 large-up-2">
+      <div class="medium-4 cell">
         <label for="email-login">Enter your Email
           <input type="text" placeholder="Email" class="form-input" id="email-login" required>
         </label>
       </div>
-      <div class="medium-6 cell">
+      <div class="medium-4 cell">
         <label for="password-login">Enter your Password
           <input type="password" placeholder="Password" class="form-input" id="password-login" required>
         </label>
       </div>
-      <button class="submit success button" id="logInBtn">Login</button>
-      <a href="/signup" class="button">Don't have an account? Signup Here!</a>
+      <div class="login-signup-buttons card-section grid-x grid-padding-x align-center">
+        <div class="login-btn-container">
+        <button class="form-btn" id="logInBtn">Login</button>
+        <a href="/signup" class="">Don't have an account? Signup Here!</a>
+       </div>
+      </div>
     </div>
   </div>
 </form>
 
 <script src="/js/logIn.js"></script>
-
