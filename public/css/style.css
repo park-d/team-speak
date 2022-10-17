@@ -58,6 +58,10 @@ legend {
     color: var(--background);
 }
 
+p {
+    font-size: 18px;
+}
+
 .word-change {
     color: var(--theme);
 }
@@ -296,11 +300,32 @@ legend {
 .comment-link {
     color: var(--background);
     margin-top: 14px;
+    font-size: 18px;
+}
+
+.comment-title {
+    color: var(--theme);
+}
+
+.comment-card {
+    background-color: var(--black);
+    border: 1px solid var(--black);
+}
+
+.comment-form-wrap {
+    background-color: var(--black);
+    border: 1px solid var(--black);
+}
+
+.comment-form {
+    background-color: var(--black);
+    padding:24px;
 }
 
 .home-container {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .home {
@@ -401,6 +426,18 @@ legend {
     background-color: var(--black);
 }
 
+.user-dash-title-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.user-dash-title-wrap p {
+    margin-top: 16px;
+}
+
 .user-dashboard-title {
     color: var(--theme);
     flex-direction: row;
@@ -456,6 +493,15 @@ legend {
 @media screen and (max-width: 760px) {
     .nav {
         flex-direction: column;
+    }
+
+    .user-dashboard-title {
+        font-size: 32px;
+    }
+
+    .user-dash-title-wrap {
+        flex-direction: column;
+        text-align: center;
     }
 }
 
