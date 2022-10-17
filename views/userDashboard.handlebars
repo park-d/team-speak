@@ -1,11 +1,11 @@
 <p><button class="form-btn" data-open="preferencesModal">Add your prefrences!</button></p>
-<div class="reveal" id="preferencesModal" data-reveal>
-  <div class="card-divider">
-    <h3>Preferences</h3>
+<div class="reveal preferences-modal" id="preferencesModal" data-reveal>
+  <div class="card-divider preferences-modal-title">
+    <h4>Preferences</h4>
   </div>
   <div>
-    <fieldset class="large-6 cell">
-      <legend>Select which categories you prefer to read about</legend>
+    <fieldset class="large-6 cell card-section preferences-modal-values">
+      <p>Select which categories you prefer to read about</p>
       <input id="checkbox1" type="checkbox" value="1"><label for="checkbox1">Sports</label>
       <input id="checkbox2" type="checkbox" value="2"><label for="checkbox2">Politics</label>
       <input id="checkbox3" type="checkbox" value="3"><label for="checkbox3">Wellness</label>
@@ -25,39 +25,478 @@
     <button type="submit" class="form-btn" id="select-preferences-btn">Submit Preferences!</button>
   </div>
 </div>
-<h3>
+<h3 class="user-dashboard-title">
   Browse your News for the Day!
 </h3>
 
-<div class="grid-x">
-  {{#each article}}
-  <div class="card column medium-10 cell user-dashboard-article">
-    <div class="article-title">
-    <h3>{{category}}</h3>
+<ul class="tabs" data-tabs id="news-tabs">
+  {{#if sportsArticles}}
+  <li class="tabs-title"><a href="#sports">Sports</a></li>
+  {{/if}}
+  {{#if politicsArticles}}
+  <li class="tabs-title "><a href="#politics">Politics</a></li>
+  {{/if}}
+  {{#if wellnessArticles}}
+  <li class="tabs-title"><a href="#wellness">Wellness</a></li>
+  {{/if}}
+  {{#if travelArticles}}
+  <li class="tabs-title"><a href="#travel">Travel</a></li>
+  {{/if}}
+  {{#if stylebeautyArticles}}
+  <li class="tabs-title"><a href="#style-&-beauty">Style & Beauty</a></li>
+  {{/if}}
+  {{#if healthylivingArticles}}
+  <li class="tabs-title"><a href="#healthy-living">Healthy Living</a></li>
+  {{/if}}
+  {{#if parentingArticles}}
+  <li class="tabs-title"><a href="#parenting">Parenting</a></li>
+  {{/if}}
+  {{#if queervoicesArticles}}
+  <li class="tabs-title"><a href="#queer-voices">Queer Voices</a></li>
+  {{/if}}
+  {{#if fooddrinkArticles}}
+  <li class="tabs-title"><a href="#food-&-drink">Food & Drink</a></li>
+  {{/if}}
+  {{#if businessArticles}}
+  <li class="tabs-title"><a href="#business">Business</a></li>
+  {{/if}}
+  {{#if comedyArticles}}
+  <li class="tabs-title"><a href="#comedy">Comedy</a></li>
+  {{/if}}
+  {{#if blackvoicesArticles}}
+  <li class="tabs-title"><a href="#black-voices">Black Voices</a></li>
+  {{/if}}
+  {{#if homelivingArticles}}
+  <li class="tabs-title"><a href="#home-&-living">Home & living</a></li>
+  {{/if}}
+  {{#if parentsArticles}}
+  <li class="tabs-title"><a href="#parents">Parents</a></li>
+  {{/if}}
+  {{#if entertainmentArticles}}
+  <li class="tabs-title"><a href="#entertainment">Entertainment</a></li>
+  {{/if}}
+</ul>
+<div class="tabs-content" data-tabs-content="news-tabs">
+  <div class="tabs-panel" id="sports">
+    {{#each sportsArticles}}
+    <div class="card column medium-10 cell user-dashboard-article">
+      <div class="card-divider article-title">
+        <h4>
+          <a href={{link}} class="form-link" target="_blank">
+            {{headline}}
+          </a>
+        </h4>
+        <button data-open="postModal">
+          <i class="fa-solid fa-square-plus custom-plus"></i>
+        </button>
+      </div>
+      <div class="card-section">
+        <p>{{short_description}}</p>
+      </div>
+      <div class="reveal" id="postModal" data-reveal>
+        <form class="post-modal">
+          <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+            required></textarea>
+          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+        </form>
+      </div>
     </div>
-    <div class="card-divider article-title">
-      <h3>
-        <a href={{link}} target="_blank">
-          {{headline}}
-        </a>
-      </h3>
-      <button data-open="postModal">
-        <i class="fa-solid fa-square-plus custom-plus"></i>
-      </button>
-    </div>
-    <div class="card-section">
-      <p>{{short_description}}</p>
-    </div>
-    <div class="reveal" id="postModal" data-reveal>
-      <form class="login-form">
-        <h4 data-id={{article_id}} id="article-id">{{headline}} </h4>
-        <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
-        <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input" required></textarea>
-        <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
-      </form>
-    </div>
+    {{/each}}
   </div>
-  {{/each}}
+  <div class="tabs-panel" id="politics">
+    {{#each politicsArticles}}
+    <div class="card column medium-10 cell user-dashboard-article">
+      <div class="card-divider article-title">
+        <h4>
+          <a href={{link}} class="form-link" target="_blank">
+            {{headline}}
+          </a>
+        </h4>
+        <button data-open="postModal">
+          <i class="fa-solid fa-square-plus custom-plus"></i>
+        </button>
+      </div>
+      <div class="card-section">
+        <p>{{short_description}}</p>
+      </div>
+      <div class="reveal" id="postModal" data-reveal>
+        <form class="post-modal">
+          <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+            required></textarea>
+          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+        </form>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  <div class="tabs-panel" id="wellness">
+    {{#each wellnessArticles}}
+    <div class="card column medium-10 cell user-dashboard-article">
+      <div class="card-divider article-title">
+        <h4>
+          <a href={{link}} class="form-link" target="_blank">
+            {{headline}}
+          </a>
+        </h4>
+        <button data-open="postModal">
+          <i class="fa-solid fa-square-plus custom-plus"></i>
+        </button>
+      </div>
+      <div class="card-section">
+        <p>{{short_description}}</p>
+      </div>
+      <div class="reveal" id="postModal" data-reveal>
+        <form class="post-modal">
+          <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+            required></textarea>
+          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+        </form>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  <div class="tabs-panel" id="travel">
+    {{#each travelArticles}}
+    <div class="card column medium-10 cell user-dashboard-article">
+      <div class="card-divider article-title">
+        <h4>
+          <a href={{link}} class="form-link" target="_blank">
+            {{headline}}
+          </a>
+        </h4>
+        <button data-open="postModal">
+          <i class="fa-solid fa-square-plus custom-plus"></i>
+        </button>
+      </div>
+      <div class="card-section">
+        <p>{{short_description}}</p>
+      </div>
+      <div class="reveal" id="postModal" data-reveal>
+        <form class="post-modal">
+          <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+            required></textarea>
+          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+        </form>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  <div class="tabs-panel" id="style-&-beauty">
+    {{#each stylebeautyArticles}}
+    <div class="card column medium-10 cell user-dashboard-article">
+      <div class="card-divider article-title">
+        <h4>
+          <a href={{link}} class="form-link" target="_blank">
+            {{headline}}
+          </a>
+        </h4>
+        <button data-open="postModal">
+          <i class="fa-solid fa-square-plus custom-plus"></i>
+        </button>
+      </div>
+      <div class="card-section">
+        <p>{{short_description}}</p>
+      </div>
+      <div class="reveal" id="postModal" data-reveal>
+        <form class="post-modal">
+          <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+            required></textarea>
+          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+        </form>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  <div class="tabs-panel" id="healthy-living">
+    {{#each healthylivingArticles}}
+    <div class="card column medium-10 cell user-dashboard-article">
+      <div class="card-divider article-title">
+        <h4>
+          <a href={{link}} class="form-link" target="_blank">
+            {{headline}}
+          </a>
+        </h4>
+        <button data-open="postModal">
+          <i class="fa-solid fa-square-plus custom-plus"></i>
+        </button>
+      </div>
+      <div class="card-section">
+        <p>{{short_description}}</p>
+      </div>
+      <div class="reveal" id="postModal" data-reveal>
+        <form class="post-modal">
+          <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+            required></textarea>
+          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+        </form>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  <div class="tabs-panel" id="parenting">
+    {{#each parentingArticles}}
+    <div class="card column medium-10 cell user-dashboard-article">
+      <div class="card-divider article-title">
+        <h4>
+          <a href={{link}} class="form-link" target="_blank">
+            {{headline}}
+          </a>
+        </h4>
+        <button data-open="postModal">
+          <i class="fa-solid fa-square-plus custom-plus"></i>
+        </button>
+      </div>
+      <div class="card-section">
+        <p>{{short_description}}</p>
+      </div>
+      <div class="reveal" id="postModal" data-reveal>
+        <form class="post-modal">
+          <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+            required></textarea>
+          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+        </form>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  <div class="tabs-panel" id="queer-voices">
+    {{#each queervoicesArticles}}
+    <div class="card column medium-10 cell user-dashboard-article">
+      <div class="card-divider article-title">
+        <h4>
+          <a href={{link}} class="form-link" target="_blank">
+            {{headline}}
+          </a>
+        </h4>
+        <button data-open="postModal">
+          <i class="fa-solid fa-square-plus custom-plus"></i>
+        </button>
+      </div>
+      <div class="card-section">
+        <p>{{short_description}}</p>
+      </div>
+      <div class="reveal" id="postModal" data-reveal>
+        <form class="post-modal">
+          <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+            required></textarea>
+          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+        </form>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  <div class="tabs-panel" id="food-&-drink">
+    {{#each fooddrinkArticles}}
+    <div class="card column medium-10 cell user-dashboard-article">
+      <div class="card-divider article-title">
+        <h4>
+          <a href={{link}} class="form-link" target="_blank">
+            {{headline}}
+          </a>
+        </h4>
+        <button data-open="postModal">
+          <i class="fa-solid fa-square-plus custom-plus"></i>
+        </button>
+      </div>
+      <div class="card-section">
+        <p>{{short_description}}</p>
+      </div>
+      <div class="reveal" id="postModal" data-reveal>
+        <form class="post-modal">
+          <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+            required></textarea>
+          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+        </form>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  <div class="tabs-panel" id="business">
+    {{#each businessArticles}}
+    <div class="card column medium-10 cell user-dashboard-article">
+      <div class="card-divider article-title">
+        <h4>
+          <a href={{link}} class="form-link" target="_blank">
+            {{headline}}
+          </a>
+        </h4>
+        <button data-open="postModal">
+          <i class="fa-solid fa-square-plus custom-plus"></i>
+        </button>
+      </div>
+      <div class="card-section">
+        <p>{{short_description}}</p>
+      </div>
+      <div class="reveal" id="postModal" data-reveal>
+        <form class="post-modal">
+          <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+            required></textarea>
+          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+        </form>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  <div class="tabs-panel" id="comedy">
+    {{#each comedyArticles}}
+    <div class="card column medium-10 cell user-dashboard-article">
+      <div class="card-divider article-title">
+        <h4>
+          <a href={{link}} class="form-link" target="_blank">
+            {{headline}}
+          </a>
+        </h4>
+        <button data-open="postModal">
+          <i class="fa-solid fa-square-plus custom-plus"></i>
+        </button>
+      </div>
+      <div class="card-section">
+        <p>{{short_description}}</p>
+      </div>
+      <div class="reveal" id="postModal" data-reveal>
+        <form class="post-modal">
+          <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+            required></textarea>
+          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+        </form>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  <div class="tabs-panel" id="black-voices">
+    {{#each blackvoicesArticles}}
+    <div class="card column medium-10 cell user-dashboard-article">
+      <div class="card-divider article-title">
+        <h4>
+          <a href={{link}} class="form-link" target="_blank">
+            {{headline}}
+          </a>
+        </h4>
+        <button data-open="postModal">
+          <i class="fa-solid fa-square-plus custom-plus"></i>
+        </button>
+      </div>
+      <div class="card-section">
+        <p>{{short_description}}</p>
+      </div>
+      <div class="reveal" id="postModal" data-reveal>
+        <form class="post-modal">
+          <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+            required></textarea>
+          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+        </form>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  <div class="tabs-panel" id="home-&-living">
+    {{#each homelivingsArticles}}
+    <div class="card column medium-10 cell user-dashboard-article">
+      <div class="card-divider article-title">
+        <h4>
+          <a href={{link}} class="form-link" target="_blank">
+            {{headline}}
+          </a>
+        </h4>
+        <button data-open="postModal">
+          <i class="fa-solid fa-square-plus custom-plus"></i>
+        </button>
+      </div>
+      <div class="card-section">
+        <p>{{short_description}}</p>
+      </div>
+      <div class="reveal" id="postModal" data-reveal>
+        <form class="post-modal">
+          <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+            required></textarea>
+          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+        </form>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  <div class="tabs-panel" id="parents">
+    {{#each parentsArticles}}
+    <div class="card column medium-10 cell user-dashboard-article">
+      <div class="card-divider article-title">
+        <h4>
+          <a href={{link}} class="form-link" target="_blank">
+            {{headline}}
+          </a>
+        </h4>
+        <button data-open="postModal">
+          <i class="fa-solid fa-square-plus custom-plus"></i>
+        </button>
+      </div>
+      <div class="card-section">
+        <p>{{short_description}}</p>
+      </div>
+      <div class="reveal" id="postModal" data-reveal>
+        <form class="post-modal">
+          <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+            required></textarea>
+          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+        </form>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  <div class="tabs-panel" id="entertainment">
+    {{#each entertainmentArticles}}
+    <div class="card column medium-10 cell user-dashboard-article">
+      <div class="card-divider article-title">
+        <h4>
+          <a href={{link}} class="form-link" target="_blank">
+            {{headline}}
+          </a>
+        </h4>
+        <button data-open="postModal">
+          <i class="fa-solid fa-square-plus custom-plus"></i>
+        </button>
+      </div>
+      <div class="card-section">
+        <p>{{short_description}}</p>
+      </div>
+      <div class="reveal" id="postModal" data-reveal>
+        <form class="post-modal">
+          <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+            required></textarea>
+          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+        </form>
+      </div>
+    </div>
+    {{/each}}
+  </div>
 </div>
 
 <script src="/js/userPreferences.js"></script>
