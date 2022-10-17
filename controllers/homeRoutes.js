@@ -65,59 +65,39 @@ router.get('/posts/:id', async (req, res) => {
     }
 });
 
-// router.get('/comments', async (req, res) => {
-//     try {
-//         // Get all projects and JOIN with user data
-//         const teamPosts = await Post.findByPk({
-//             // where: {
-
-//         });
-
-//         // Serialize data so the template can read it
-//         const allPosts = teamPosts.map((post) => post.get({ plain: true }));
-
-//         // Pass serialized data and session flag into template
-//         res.render('comments', {
-//             allPosts
-//         });
-//     } catch (err) {
-//         res.status(500).json(err);
-//     }
-
-
-// });
-
 router.get('/userDashboard', async (req, res) => {
     try {
+        // first we gather all the preferences that a user likes
         const currentUserPreferences = await Preferences.findAll({
             where: {
                 user_id: req.session.user_id
             }
-        }
-        );
-
-        const selectedpreferences = currentUserPreferences.map((pref) => pref.get({plain: true}));
-    
-
-        const organizedCatArray = selectedpreferences.map(pref => {
-            return pref.category_id
-                ;
         });
+        // serialize that data
+        const selectedpreferences = currentUserPreferences.map((pref) => pref.get({plain: true}));
+        // return just the category id to give to the category database
+        const organizedCatArray = selectedpreferences.map(pref => {
+            return pref.category_id;
+        });
+        // query the cactegory name based on the users category_id preferences
         const catIDtoName = await Category.findAll({
             attributes: ['category_name'],
             where: {
                 category_id: organizedCatArray
             }
         });
-        const plainPreferences = catIDtoName.map((pref) => pref.get({ plain: true }));
 
+        // serialize that data
+        const plainPreferences = catIDtoName.map((pref) => pref.get({plain: true}));
+        // return that value in uppercase because that is how the data is in NEWS
         const categoryParams = plainPreferences.map(pref => {
             return pref.category_name.toUpperCase();
         });
-
-        if (!categoryParams) {
+        // if no params exist, tell them that
+        if(!categoryParams) {
             alert('You have not set your preferences.');
             res.redirect('/userDashboard');
+            // query the news DB based on the selected categories
         } else {
             const allNews = await News.findAll({
                 where: {
@@ -128,13 +108,12 @@ router.get('/userDashboard', async (req, res) => {
             );
 
             //because of the way sequelize returns data, we have to trim unwanted formatting (nested objects) with plain: true
-            const article = allNews.map((news) => news.get({ plain: true }));
-            // rendering the all-posts handlebars view and passing the reformatted data to it
-
+            const article = allNews.map((news) => news.get({plain: true}));
+            // rendering the userDashboard handlebars view and passing the reformatted data to it
             res.render("userDashboard", {article});
 
         }
-    } catch (err) {
+    } catch(err) {
         res.status(500).json(err);
     }
 });
