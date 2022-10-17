@@ -431,3 +431,19 @@ legend {
     color: var(--theme)
 }
 
+.tabs-title-container {
+    background-color: var(--black);
+}
+
+.tabs-title {
+    color: var(--theme);
+    font-weight: var(--rubik-bold);
+}
+
+.tabs-content {
+    background-color: var(--off-black);
+}
+
+.is-active {
+    color: var(--theme);
+}
