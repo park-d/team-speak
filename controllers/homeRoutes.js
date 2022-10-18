@@ -34,6 +34,10 @@ router.get('/register', (req, res) => {
     res.render('signup-admin', {loggedIn: req.session.loggedIn});
 });
 
+router.get('/companyMessage', (req, res) => {
+    res.render('companyMessage', {loggedIn: req.session.loggedIn});
+})
+
 // get route for team dashboard. No direct link from homepage or userDashboard yet
 router.get('/teamDashboard', async (req, res) => {
     try {
