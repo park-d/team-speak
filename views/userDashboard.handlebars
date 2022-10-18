@@ -52,7 +52,7 @@
   <li class="tabs-title"><a href="#sports">Sports</a></li>
   {{/if}}
   {{#if politicsArticles}}
-  <li class="tabs-title "><a href="#politics">Politics</a></li>
+  <li class="tabs-title" id="tabs-title"><a href="#politics">Politics</a></li>
   {{/if}}
   {{#if wellnessArticles}}
   <li class="tabs-title"><a href="#wellness">Wellness</a></li>
@@ -117,12 +117,13 @@
         <p>{{short_description}}</p>
       </div>
       <div class="reveal post-modal" id="postModal{{article_id}}" data-reveal>
-        <form class="post-modal">
-          <h4 data-id={{this.article_id}} id="article-id" class="post-modal-title">{{this.headline}} </h4>
-          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
-          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+        <form>
+          <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title{{article_id}}"
+            required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input{{article_id}}"
             required></textarea>
-          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+          <button class="form-btn" id="submit-post{{article_id}}">Submit Post!</button>
         </form>
       </div>
     </div>
@@ -149,12 +150,13 @@
         <p>{{short_description}}</p>
       </div>
       <div class="reveal post-modal" id="postModal{{article_id}}" data-reveal>
-        <form class="post-modal">
+        <form>
           <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
-          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
-          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title{{article_id}}"
+            required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input{{article_id}}"
             required></textarea>
-          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+          <button class="form-btn" id="submit-post{{article_id}}">Submit Post!</button>
         </form>
       </div>
     </div>
@@ -181,12 +183,13 @@
         <p>{{short_description}}</p>
       </div>
       <div class="reveal post-modal" id="postModal{{article_id}}" data-reveal>
-        <form class="post-modal">
+        <form>
           <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
-          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
-          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title{{article_id}}"
+            required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input{{article_id}}"
             required></textarea>
-          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+          <button class="form-btn" id="submit-post{{article_id}}">Submit Post!</button>
         </form>
       </div>
     </div>
@@ -213,12 +216,13 @@
         <p>{{short_description}}</p>
       </div>
       <div class="reveal post-modal" id="postModal{{article_id}}" data-reveal>
-        <form class="post-modal">
+        <form>
           <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
-          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
-          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title{{article_id}}"
+            required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input{{article_id}}"
             required></textarea>
-          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+          <button class="form-btn" id="submit-post{{article_id}}">Submit Post!</button>
         </form>
       </div>
     </div>
@@ -245,12 +249,13 @@
         <p>{{short_description}}</p>
       </div>
       <div class="reveal post-modal" id="postModal{{article_id}}" data-reveal>
-        <form class="post-modal">
+        <form>
           <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
-          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
-          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title{{article_id}}"
+            required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input{{article_id}}"
             required></textarea>
-          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+          <button class="form-btn" id="submit-post{{article_id}}">Submit Post!</button>
         </form>
       </div>
     </div>
@@ -277,12 +282,13 @@
         <p>{{short_description}}</p>
       </div>
       <div class="reveal post-modal" id="postModal{{article_id}}" data-reveal>
-        <form class="post-modal">
+        <form>
           <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
-          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
-          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title{{article_id}}"
+            required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input{{article_id}}"
             required></textarea>
-          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+          <button class="form-btn" id="submit-post{{article_id}}">Submit Post!</button>
         </form>
       </div>
     </div>
@@ -309,12 +315,13 @@
         <p>{{short_description}}</p>
       </div>
       <div class="reveal post-modal" id="postModal{{article_id}}" data-reveal>
-        <form class="post-modal">
+        <form>
           <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
-          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
-          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title{{article_id}}"
+            required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input{{article_id}}"
             required></textarea>
-          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+          <button class="form-btn" id="submit-post{{article_id}}">Submit Post!</button>
         </form>
       </div>
     </div>
@@ -341,12 +348,13 @@
         <p>{{short_description}}</p>
       </div>
       <div class="reveal post-modal" id="postModal{{article_id}}" data-reveal>
-        <form class="post-modal">
+        <form>
           <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
-          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
-          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title{{article_id}}"
+            required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input{{article_id}}"
             required></textarea>
-          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+          <button class="form-btn" id="submit-post{{article_id}}">Submit Post!</button>
         </form>
       </div>
     </div>
@@ -373,12 +381,13 @@
         <p>{{short_description}}</p>
       </div>
       <div class="reveal post-modal" id="postModal{{article_id}}" data-reveal>
-        <form class="post-modal">
+        <form>
           <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
-          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
-          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title{{article_id}}"
+            required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input{{article_id}}"
             required></textarea>
-          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+          <button class="form-btn" id="submit-post{{article_id}}">Submit Post!</button>
         </form>
       </div>
     </div>
@@ -405,12 +414,13 @@
         <p>{{short_description}}</p>
       </div>
       <div class="reveal post-modal" id="postModal{{article_id}}" data-reveal>
-        <form class="post-modal">
+        <form>
           <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
-          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
-          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title{{article_id}}"
+            required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input{{article_id}}"
             required></textarea>
-          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+          <button class="form-btn" id="submit-post{{article_id}}">Submit Post!</button>
         </form>
       </div>
     </div>
@@ -437,12 +447,13 @@
         <p>{{short_description}}</p>
       </div>
       <div class="reveal post-modal" id="postModal{{article_id}}" data-reveal>
-        <form class="post-modal">
+        <form>
           <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
-          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
-          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title{{article_id}}"
+            required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input{{article_id}}"
             required></textarea>
-          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+          <button class="form-btn" id="submit-post{{article_id}}">Submit Post!</button>
         </form>
       </div>
     </div>
@@ -469,12 +480,13 @@
         <p>{{short_description}}</p>
       </div>
       <div class="reveal post-modal" id="postModal{{article_id}}" data-reveal>
-        <form class="post-modal">
+        <form>
           <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
-          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
-          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title{{article_id}}"
+            required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input{{article_id}}"
             required></textarea>
-          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+          <button class="form-btn" id="submit-post{{article_id}}">Submit Post!</button>
         </form>
       </div>
     </div>
@@ -501,12 +513,13 @@
         <p>{{short_description}}</p>
       </div>
       <div class="reveal post-modal" id="postModal{{article_id}}" data-reveal>
-        <form class="post-modal">
+        <form>
           <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
-          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
-          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title{{article_id}}"
+            required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input{{article_id}}"
             required></textarea>
-          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+          <button class="form-btn" id="submit-post{{article_id}}">Submit Post!</button>
         </form>
       </div>
     </div>
@@ -533,12 +546,12 @@
         <p>{{short_description}}</p>
       </div>
       <div class="reveal post-modal" id="postModal{{article_id}}" data-reveal>
-        <form class="post-modal">
+        <form>
           <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
-          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
-          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title{{article_id}}" required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input{{article_id}}"
             required></textarea>
-          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+          <button class="form-btn" id="submit-post{{article_id}}">Submit Post!</button>
         </form>
       </div>
     </div>
@@ -565,12 +578,13 @@
         <p>{{short_description}}</p>
       </div>
       <div class="reveal post-modal" id="postModal{{article_id}}" data-reveal>
-        <form class="post-modal">
+        <form>
           <h4 data-id={{article_id}} id="article-id" class="post-modal-title">{{headline}} </h4>
-          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title" required>
-          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input"
+          <input type="text" placeholder="Enter your post title here" class="form-input" name="post-title{{article_id}}"
+            required>
+          <textarea type="text" placeholder="Enter your post here" class="form-input" name="post-input{{article_id}}"
             required></textarea>
-          <a href="/teamDashboard" class="form-btn" id="submit-post">Submit Post!</a>
+          <button class="form-btn" id="submit-post{{article_id}}">Submit Post!</button>
         </form>
       </div>
     </div>
