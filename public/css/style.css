@@ -623,3 +623,7 @@ p {
     display: flex;
     align-items: center;
 }
+
+.error-message {
+    color: var(--theme);
+}
