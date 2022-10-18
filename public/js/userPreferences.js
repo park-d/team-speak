@@ -11,6 +11,7 @@ const preferencesHandler = async (event) => {
         user_preferences.push(preferencesSection.eq(index).val());
     };
     // we need to fetch data from the api and make a post request when we click on the signup button
+    if(preferencesSection.length > 0){
         const response = await fetch('/api/users/preferences', {
             method: 'POST',
             body: JSON.stringify({user_preferences}),
@@ -22,6 +23,8 @@ const preferencesHandler = async (event) => {
         } else {
             alert('Preferences did not save, please try again.');
         }
+    } else { $("#message").text("Please choose at least one preference.")
+    }
     };
 
 preferencesBtn.click(preferencesHandler);

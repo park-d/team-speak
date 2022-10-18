@@ -24,8 +24,10 @@ const registerFormHandler = async (event) => {
         if (response.ok) {
             document.location.replace('/signup');
         } else {
-            alert('Please enter both Company and Team names');
+            $("#message").text("Sorry...your data did not save to the database. Please try again.")
         }
+    } else {
+        $("#message").text("You must enter both Company and Team names.")
     }
 };
 

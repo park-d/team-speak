@@ -17,9 +17,9 @@ const loginFormHandler = async (event) => {
         if(response.ok) {
             document.location.replace('/userDashboard');
         } else {
-            alert('Failed to log in');
+            $("#message").text("Username and password combination is incorrect. Please try again.")
         }
-    }
+    } else($("#message").text("Please enter your username and password."))
 };
 
 logInBtn.click(loginFormHandler);

@@ -37,11 +37,11 @@ router.get('/register', (req, res) => {
 // get route for team dashboard. No direct link from homepage or userDashboard yet
 router.get('/teamDashboard', async (req, res) => {
     try {
-        const posts = await sequelize.query("SELECT post.*, user.username, news.headline, news.link, news.short_description from post INNER JOIN user on user.user_id = post.user_id LEFT JOIN news on news.article_id = post.article_id WHERE post.team_id = ? ORDER BY post.updated_at DESC", {
+        const posts = await sequelize.query("SELECT post.*, user.username, news.headline, news.link, news.short_description, COUNT(comment.comment_id) AS commentCount from post INNER JOIN user on user.user_id = post.user_id LEFT JOIN news on news.article_id = post.article_id LEFT JOIN comment on comment.post_id=post.post_id WHERE post.team_id = ? GROUP BY post.post_id, post.title, post.body, post.team_id, post.user_id, post.article_id, post.created_at, post.updated_at, user.username, news.headline, news.link, news.short_description ORDER BY post.updated_at DESC", {
             replacements: [req.session.team_id],
             type: QueryTypes.SELECT
         });
-        console.log(posts);
+        console.log(posts)
         res.render('teamDashboard', {posts, loggedIn:req.session.loggedIn});
     } catch(err) {
         res.status(500).json(err);
@@ -51,7 +51,7 @@ router.get('/teamDashboard', async (req, res) => {
 
 router.get('/teamDashboard/:username', async (req, res) => {
     try {
-        const posts = await sequelize.query("SELECT post.*, user.username, news.headline, news.link, news.short_description from post INNER JOIN user on user.user_id = post.user_id LEFT JOIN news on news.article_id = post.article_id WHERE user.username = ? ORDER BY post.updated_at DESC", {
+        const posts = await sequelize.query("SELECT post.*, user.username, news.headline, news.link, news.short_description, COUNT(comment.comment_id) AS commentCount from post INNER JOIN user on user.user_id = post.user_id LEFT JOIN news on news.article_id = post.article_id LEFT JOIN comment on comment.post_id=post.post_id WHERE user.username = ? GROUP BY post.post_id, post.title, post.body, post.team_id, post.user_id, post.article_id, post.created_at, post.updated_at, user.username, news.headline, news.link, news.short_description ORDER BY post.updated_at DESC", {
             replacements: [req.params.username],
             type: QueryTypes.SELECT
         });
