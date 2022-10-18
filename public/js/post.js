@@ -9,7 +9,7 @@ const newPostHandler = async (event) => {
     const title = currentArticle.children[1].value;
     const body = currentArticle.children[2].value;
     // we need to fetch data from the api and make a post request when we click on the new post button
-    console.log(title, body, article_id);
+    if (title && body) {
     const response = await fetch('/api/posts/new', {
         method: 'POST',
         body: JSON.stringify({title, body, article_id}),
@@ -17,11 +17,13 @@ const newPostHandler = async (event) => {
     });
     // if the post is successful, bring the user to their dashboard page to see the post, otherwise alert to post error
     if(response.ok) {
-        console.log(response);
         document.location.replace('/teamDashboard');
 
     } else {
-        alert('Could not post');
+        alert('Could not post to server.');
+        }
+    } else {
+        currentArticle.children[3].textContent="You must give your post a title and body."
     }
 };
 

@@ -10,7 +10,7 @@ const signupFormHandler = async (event) => {
     const email = $('#email-signup').val().trim();
     const password = $('#password-signup').val().trim();
     // we need to fetch data from the api and make a post request when we click on the signup button
-    if (username && password) {
+    if (email && username && password) {
         const response = await fetch('/api/users/signup', {
             method: 'POST',
             body: JSON.stringify({ username, email, password, team_name, company_name }),
@@ -20,9 +20,9 @@ const signupFormHandler = async (event) => {
         if (response.ok) {
             document.location.replace('/userDashboard');
         } else {
-            alert('Sign-up failed, please try again.');
+            $("#message").text("Company or team is not a member of TeamSpeak.")
         }
-    }
+    } else($("#message").text("You must enter email, username, and at least 8 character length password."))
 };
 
 signupBtn.click(signupFormHandler);

@@ -7,7 +7,6 @@ const commentHandler = async function (event) {
 
     const post_id = $('#post-id').attr("data-id");
     const body = $('textarea[name="comment-input"]').val();
-    console.log(post_id,body)
     // we need to fetch data from the api and make a post request when we click on the new post button
     if (body) {
         await fetch('/api/comments', {
@@ -22,6 +21,8 @@ const commentHandler = async function (event) {
         });
 
         document.location.reload();
+    } else {
+        $("#message").text("Please enter a comment before submitting.")
     }
 };
 
