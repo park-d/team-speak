@@ -192,12 +192,8 @@ p {
     text-align: center;
 }
 
-.metric h4 {
-    color: var(--theme);
-}
-
 .metric p {
-    font-size: 12px;
+    font-size: 14px;
     max-width: 200px;
 }
 
@@ -342,7 +338,7 @@ p {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    background-color: var(--off-black);
+    background-color: var(--black);
     height: 200px;
     display: flex;
 }
@@ -516,6 +512,16 @@ p {
         flex-direction: column;
         text-align: center;
     }
+}
+
+@media screen and (max-width: 640px) {
+    .metrics-container {
+        flex-direction: column;
+    }
+
+    .call-to-action {
+        flex-direction: column;
+    }
 
 }
 
@@ -556,7 +562,6 @@ p {
 
 .tab-title a:active {
     background-color: var(--theme);
-    color: red;
     font-weight: var(--rubik-bold);
 }
 
