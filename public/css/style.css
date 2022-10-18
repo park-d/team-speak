@@ -426,6 +426,12 @@ p {
     background-color: var(--black);
 }
 
+.preference-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .user-dash-title-wrap {
     display: flex;
     flex-direction: row;
