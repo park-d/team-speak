@@ -623,3 +623,12 @@ p {
     display: flex;
     align-items: center;
 }
+
+.error-message {
+    color: #e5383b;
+    margin-bottom: 8px;
+}
+
+.add-team-button {
+    margin-bottom: 8px;
+}
