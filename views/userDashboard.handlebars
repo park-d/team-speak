@@ -78,6 +78,7 @@
   <li class="tabs-title"><a href="#entertainment">Entertainment</a></li>
   {{/if}}
 </ul>
+
 <div class="tabs-content" data-tabs-content="news-tabs">
   <div class="tabs-panel" id="sports">
     {{#each sportsArticles}}
@@ -446,15 +447,19 @@
   <div class="tabs-panel" id="weird-news">
     {{#each weirdnewsArticles}}
     <div class="card column medium-10 cell user-dashboard-article">
-      <div class="card-divider article-title">
-        <h4>
-          <a href={{link}} class="form-link" target="_blank">
-            {{headline}}
-          </a>
-        </h4>
-        <button data-open="postModal{{article_id}}">
-          <i class="fa-solid fa-square-plus custom-plus"></i>
-        </button>
+      <div class="card-divider article-title headline-wrap">
+        <div class="headline-title-wrap">
+          <h4>
+            <a href={{link}} class="form-link" target="_blank">
+              {{headline}}
+            </a>
+          </h4>
+        </div>
+        <div class="add-post-wrap">
+          <button data-open="postModal{{article_id}}">
+            <i class="fa-solid fa-square-plus custom-plus"></i>
+          </button>
+        </div>
       </div>
       <div class="card-section">
         <p>{{short_description}}</p>
