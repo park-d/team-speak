@@ -67,12 +67,12 @@ p {
 }
 
 .custom-title {
-    font-size: 28px;
+    font-size: 38px;
     font-weight: var(--rubik-bold);
 }
 
 .logo-bracket {
-    font-size: 38px;
+    font-size: 48px;
     color: var(--theme);
     text-shadow: 1px 1px 6px rgba(39, 99, 74, 0.75);
 }
@@ -116,7 +116,7 @@ p {
     border: 3px solid var(--theme);
 }
 
-.form-link {
+.form-link:link {
     color: var(--theme);
     text-decoration: none;
 }
@@ -510,6 +510,14 @@ p {
         flex-direction: column;
         text-align: center;
     }
+
+}
+
+@media screen and (max-width: 540px) {
+    .landing-img {
+        width: 300px;
+        height: auto;
+    }
 }
 
 /* ------------- ------------- */
@@ -585,4 +593,22 @@ p {
 
 #signup-button {
     margin-bottom: 14px;
+}
+
+
+.headline-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.headline-title-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.add-post-wrap {
+    display: flex;
+    align-items: center;
 }
