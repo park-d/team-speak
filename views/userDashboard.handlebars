@@ -5,21 +5,37 @@
   <div>
     <fieldset class="large-6 cell card-section preferences-modal-values">
       <p>Select which categories you prefer to read about:</p>
-      <input id="checkbox1" type="checkbox" value="1"><label for="checkbox1">Sports</label>
-      <input id="checkbox2" type="checkbox" value="2"><label for="checkbox2">Politics</label>
-      <input id="checkbox3" type="checkbox" value="3"><label for="checkbox3">Wellness</label>
-      <input id="checkbox4" type="checkbox" value="4"><label for="checkbox4">Travel</label>
-      <input id="checkbox5" type="checkbox" value="5"><label for="checkbox5">Style & Beauty </label>
-      <input id="checkbox6" type="checkbox" value="6"><label for="checkbox6">Tech</label>
-      <input id="checkbox7" type="checkbox" value="7"><label for="checkbox7">Parenting</label>
-      <input id="checkbox8" type="checkbox" value="8"><label for="checkbox8">Queer Voices</label>
-      <input id="checkbox9" type="checkbox" value="9"><label for="checkbox9">Food & Drink</label>
-      <input id="checkbox10" type="checkbox" value="10"><label for="checkbox10">Business</label>
-      <input id="checkbox11" type="checkbox" value="11"><label for="checkbox11">Comedy</label>
-      <input id="checkbox12" type="checkbox" value="12"><label for="checkbox12">Black Voices</label>
-      <input id="checkbox13" type="checkbox" value="13"><label for="checkbox13">Culture & Arts</label>
-      <input id="checkbox14" type="checkbox" value="14"><label for="checkbox14">Weird News</label>
-      <input id="checkbox15" type="checkbox" value="15"><label for="checkbox15">Entertainment</label>
+      <div class="preference-container">
+        <div class="preference-row">
+          <input id="checkbox1" type="checkbox" value="1"><label for="checkbox1">Sports</label>
+          <input id="checkbox2" type="checkbox" value="2"><label for="checkbox2">Politics</label>
+          <input id="checkbox3" type="checkbox" value="3"><label for="checkbox3">Wellness</label>
+        </div>
+
+        <div class="preference-row">
+          <input id="checkbox4" type="checkbox" value="4"><label for="checkbox4">Travel</label>
+          <input id="checkbox5" type="checkbox" value="5"><label for="checkbox5">Style & Beauty </label>
+          <input id="checkbox6" type="checkbox" value="6"><label for="checkbox6">Tech</label>
+        </div>
+
+        <div class="preference-row">
+          <input id="checkbox7" type="checkbox" value="7"><label for="checkbox7">Parenting</label>
+          <input id="checkbox8" type="checkbox" value="8"><label for="checkbox8">Queer Voices</label>
+          <input id="checkbox9" type="checkbox" value="9"><label for="checkbox9">Food & Drink</label>
+        </div>
+
+        <div class="preference-row">
+          <input id="checkbox10" type="checkbox" value="10"><label for="checkbox10">Business</label>
+          <input id="checkbox11" type="checkbox" value="11"><label for="checkbox11">Comedy</label>
+          <input id="checkbox12" type="checkbox" value="12"><label for="checkbox12">Black Voices</label>
+        </div>
+
+        <div class="preference-row">
+          <input id="checkbox13" type="checkbox" value="13"><label for="checkbox13">Culture & Arts</label>
+          <input id="checkbox14" type="checkbox" value="14"><label for="checkbox14">Weird News</label>
+          <input id="checkbox15" type="checkbox" value="15"><label for="checkbox15">Entertainment</label>
+        </div>
+      </div>
     </fieldset>
     <button type="submit" class="form-btn" id="select-preferences-btn">Submit</button>
   </div>
@@ -83,15 +99,19 @@
   <div class="tabs-panel" id="sports">
     {{#each sportsArticles}}
     <div class="card column medium-10 cell user-dashboard-article">
-      <div class="card-divider article-title">
-        <h4>
-          <a href={{link}} class="form-link" target="_blank">
-            {{headline}}
-          </a>
-        </h4>
-        <button data-open="postModal{{article_id}}">
-          <i class="fa-solid fa-square-plus custom-plus"></i>
-        </button>
+      <div class="card-divider article-title headline-wrap">
+        <div class="headline-title-wrap">
+          <h4>
+            <a href={{link}} class="form-link" target="_blank">
+              {{headline}}
+            </a>
+          </h4>
+        </div>
+        <div class="add-post-wrap">
+          <button data-open="postModal{{article_id}}">
+            <i class="fa-solid fa-square-plus custom-plus"></i>
+          </button>
+        </div>
       </div>
       <div class="card-section">
         <p>{{short_description}}</p>
@@ -112,15 +132,19 @@
   <div class="tabs-panel" id="politics">
     {{#each politicsArticles}}
     <div class="card column medium-10 cell user-dashboard-article">
-      <div class="card-divider article-title">
-        <h4>
-          <a href={{link}} class="form-link" target="_blank">
-            {{headline}}
-          </a>
-        </h4>
-        <button data-open="postModal{{article_id}}">
-          <i class="fa-solid fa-square-plus custom-plus"></i>
-        </button>
+      <div class="card-divider article-title headline-wrap">
+        <div class="headline-title-wrap">
+          <h4>
+            <a href={{link}} class="form-link" target="_blank">
+              {{headline}}
+            </a>
+          </h4>
+        </div>
+        <div class="add-post-wrap">
+          <button data-open="postModal{{article_id}}">
+            <i class="fa-solid fa-square-plus custom-plus"></i>
+          </button>
+        </div>
       </div>
       <div class="card-section">
         <p>{{short_description}}</p>
@@ -141,15 +165,19 @@
   <div class="tabs-panel" id="wellness">
     {{#each wellnessArticles}}
     <div class="card column medium-10 cell user-dashboard-article">
-      <div class="card-divider article-title">
-        <h4>
-          <a href={{link}} class="form-link" target="_blank">
-            {{headline}}
-          </a>
-        </h4>
-        <button data-open="postModal{{article_id}}">
-          <i class="fa-solid fa-square-plus custom-plus"></i>
-        </button>
+      <div class="card-divider article-title headline-wrap">
+        <div class="headline-title-wrap">
+          <h4>
+            <a href={{link}} class="form-link" target="_blank">
+              {{headline}}
+            </a>
+          </h4>
+        </div>
+        <div class="add-post-wrap">
+          <button data-open="postModal{{article_id}}">
+            <i class="fa-solid fa-square-plus custom-plus"></i>
+          </button>
+        </div>
       </div>
       <div class="card-section">
         <p>{{short_description}}</p>
@@ -170,15 +198,19 @@
   <div class="tabs-panel" id="travel">
     {{#each travelArticles}}
     <div class="card column medium-10 cell user-dashboard-article">
-      <div class="card-divider article-title">
-        <h4>
-          <a href={{link}} class="form-link" target="_blank">
-            {{headline}}
-          </a>
-        </h4>
-        <button data-open="postModal{{article_id}}">
-          <i class="fa-solid fa-square-plus custom-plus"></i>
-        </button>
+      <div class="card-divider article-title headline-wrap">
+        <div class="headline-title-wrap">
+          <h4>
+            <a href={{link}} class="form-link" target="_blank">
+              {{headline}}
+            </a>
+          </h4>
+        </div>
+        <div class="add-post-wrap">
+          <button data-open="postModal{{article_id}}">
+            <i class="fa-solid fa-square-plus custom-plus"></i>
+          </button>
+        </div>
       </div>
       <div class="card-section">
         <p>{{short_description}}</p>
@@ -199,15 +231,19 @@
   <div class="tabs-panel" id="style-beauty">
     {{#each stylebeautyArticles}}
     <div class="card column medium-10 cell user-dashboard-article">
-      <div class="card-divider article-title">
-        <h4>
-          <a href={{link}} class="form-link" target="_blank">
-            {{headline}}
-          </a>
-        </h4>
-        <button data-open="postModal{{article_id}}">
-          <i class="fa-solid fa-square-plus custom-plus"></i>
-        </button>
+      <div class="card-divider article-title headline-wrap">
+        <div class="headline-title-wrap">
+          <h4>
+            <a href={{link}} class="form-link" target="_blank">
+              {{headline}}
+            </a>
+          </h4>
+        </div>
+        <div class="add-post-wrap">
+          <button data-open="postModal{{article_id}}">
+            <i class="fa-solid fa-square-plus custom-plus"></i>
+          </button>
+        </div>
       </div>
       <div class="card-section">
         <p>{{short_description}}</p>
@@ -228,15 +264,19 @@
   <div class="tabs-panel" id="tech">
     {{#each techArticles}}
     <div class="card column medium-10 cell user-dashboard-article">
-      <div class="card-divider article-title">
-        <h4>
-          <a href={{link}} class="form-link" target="_blank">
-            {{headline}}
-          </a>
-        </h4>
-        <button data-open="postModal{{article_id}}">
-          <i class="fa-solid fa-square-plus custom-plus"></i>
-        </button>
+      <div class="card-divider article-title headline-wrap">
+        <div class="headline-title-wrap">
+          <h4>
+            <a href={{link}} class="form-link" target="_blank">
+              {{headline}}
+            </a>
+          </h4>
+        </div>
+        <div class="add-post-wrap">
+          <button data-open="postModal{{article_id}}">
+            <i class="fa-solid fa-square-plus custom-plus"></i>
+          </button>
+        </div>
       </div>
       <div class="card-section">
         <p>{{short_description}}</p>
@@ -257,15 +297,19 @@
   <div class="tabs-panel" id="parenting">
     {{#each parentingArticles}}
     <div class="card column medium-10 cell user-dashboard-article">
-      <div class="card-divider article-title">
-        <h4>
-          <a href={{link}} class="form-link" target="_blank">
-            {{headline}}
-          </a>
-        </h4>
-        <button data-open="postModal{{article_id}}">
-          <i class="fa-solid fa-square-plus custom-plus"></i>
-        </button>
+      <div class="card-divider article-title headline-wrap">
+        <div class="headline-title-wrap">
+          <h4>
+            <a href={{link}} class="form-link" target="_blank">
+              {{headline}}
+            </a>
+          </h4>
+        </div>
+        <div class="add-post-wrap">
+          <button data-open="postModal{{article_id}}">
+            <i class="fa-solid fa-square-plus custom-plus"></i>
+          </button>
+        </div>
       </div>
       <div class="card-section">
         <p>{{short_description}}</p>
@@ -286,15 +330,19 @@
   <div class="tabs-panel" id="queer-voices">
     {{#each queervoicesArticles}}
     <div class="card column medium-10 cell user-dashboard-article">
-      <div class="card-divider article-title">
-        <h4>
-          <a href={{link}} class="form-link" target="_blank">
-            {{headline}}
-          </a>
-        </h4>
-        <button data-open="postModal{{article_id}}">
-          <i class="fa-solid fa-square-plus custom-plus"></i>
-        </button>
+      <div class="card-divider article-title headline-wrap">
+        <div class="headline-title-wrap">
+          <h4>
+            <a href={{link}} class="form-link" target="_blank">
+              {{headline}}
+            </a>
+          </h4>
+        </div>
+        <div class="add-post-wrap">
+          <button data-open="postModal{{article_id}}">
+            <i class="fa-solid fa-square-plus custom-plus"></i>
+          </button>
+        </div>
       </div>
       <div class="card-section">
         <p>{{short_description}}</p>
@@ -315,15 +363,19 @@
   <div class="tabs-panel" id="food-drink">
     {{#each fooddrinkArticles}}
     <div class="card column medium-10 cell user-dashboard-article">
-      <div class="card-divider article-title">
-        <h4>
-          <a href={{link}} class="form-link" target="_blank">
-            {{headline}}
-          </a>
-        </h4>
-        <button data-open="postModal{{article_id}}">
-          <i class="fa-solid fa-square-plus custom-plus"></i>
-        </button>
+      <div class="card-divider article-title headline-wrap">
+        <div class="headline-title-wrap">
+          <h4>
+            <a href={{link}} class="form-link" target="_blank">
+              {{headline}}
+            </a>
+          </h4>
+        </div>
+        <div class="add-post-wrap">
+          <button data-open="postModal{{article_id}}">
+            <i class="fa-solid fa-square-plus custom-plus"></i>
+          </button>
+        </div>
       </div>
       <div class="card-section">
         <p>{{short_description}}</p>
@@ -344,15 +396,19 @@
   <div class="tabs-panel" id="business">
     {{#each businessArticles}}
     <div class="card column medium-10 cell user-dashboard-article">
-      <div class="card-divider article-title">
-        <h4>
-          <a href={{link}} class="form-link" target="_blank">
-            {{headline}}
-          </a>
-        </h4>
-        <button data-open="postModal{{article_id}}">
-          <i class="fa-solid fa-square-plus custom-plus"></i>
-        </button>
+      <div class="card-divider article-title headline-wrap">
+        <div class="headline-title-wrap">
+          <h4>
+            <a href={{link}} class="form-link" target="_blank">
+              {{headline}}
+            </a>
+          </h4>
+        </div>
+        <div class="add-post-wrap">
+          <button data-open="postModal{{article_id}}">
+            <i class="fa-solid fa-square-plus custom-plus"></i>
+          </button>
+        </div>
       </div>
       <div class="card-section">
         <p>{{short_description}}</p>
@@ -373,15 +429,19 @@
   <div class="tabs-panel" id="comedy">
     {{#each comedyArticles}}
     <div class="card column medium-10 cell user-dashboard-article">
-      <div class="card-divider article-title">
-        <h4>
-          <a href={{link}} class="form-link" target="_blank">
-            {{headline}}
-          </a>
-        </h4>
-        <button data-open="postModal{{article_id}}">
-          <i class="fa-solid fa-square-plus custom-plus"></i>
-        </button>
+      <div class="card-divider article-title headline-wrap">
+        <div class="headline-title-wrap">
+          <h4>
+            <a href={{link}} class="form-link" target="_blank">
+              {{headline}}
+            </a>
+          </h4>
+        </div>
+        <div class="add-post-wrap">
+          <button data-open="postModal{{article_id}}">
+            <i class="fa-solid fa-square-plus custom-plus"></i>
+          </button>
+        </div>
       </div>
       <div class="card-section">
         <p>{{short_description}}</p>
@@ -402,15 +462,19 @@
   <div class="tabs-panel" id="black-voices">
     {{#each blackvoicesArticles}}
     <div class="card column medium-10 cell user-dashboard-article">
-      <div class="card-divider article-title">
-        <h4>
-          <a href={{link}} class="form-link" target="_blank">
-            {{headline}}
-          </a>
-        </h4>
-        <button data-open="postModal{{article_id}}">
-          <i class="fa-solid fa-square-plus custom-plus"></i>
-        </button>
+      <div class="card-divider article-title headline-wrap">
+        <div class="headline-title-wrap">
+          <h4>
+            <a href={{link}} class="form-link" target="_blank">
+              {{headline}}
+            </a>
+          </h4>
+        </div>
+        <div class="add-post-wrap">
+          <button data-open="postModal{{article_id}}">
+            <i class="fa-solid fa-square-plus custom-plus"></i>
+          </button>
+        </div>
       </div>
       <div class="card-section">
         <p>{{short_description}}</p>
@@ -431,15 +495,19 @@
   <div class="tabs-panel" id="culture-arts">
     {{#each cultureartsArticles}}
     <div class="card column medium-10 cell user-dashboard-article">
-      <div class="card-divider article-title">
-        <h4>
-          <a href={{link}} class="form-link" target="_blank">
-            {{headline}}
-          </a>
-        </h4>
-        <button data-open="postModal{{article_id}}">
-          <i class="fa-solid fa-square-plus custom-plus"></i>
-        </button>
+      <div class="card-divider article-title headline-wrap">
+        <div class="headline-title-wrap">
+          <h4>
+            <a href={{link}} class="form-link" target="_blank">
+              {{headline}}
+            </a>
+          </h4>
+        </div>
+        <div class="add-post-wrap">
+          <button data-open="postModal{{article_id}}">
+            <i class="fa-solid fa-square-plus custom-plus"></i>
+          </button>
+        </div>
       </div>
       <div class="card-section">
         <p>{{short_description}}</p>
@@ -492,15 +560,19 @@
   <div class="tabs-panel" id="entertainment">
     {{#each entertainmentArticles}}
     <div class="card column medium-10 cell user-dashboard-article">
-      <div class="card-divider article-title">
-        <h4>
-          <a href={{link}} class="form-link" target="_blank">
-            {{headline}}
-          </a>
-        </h4>
-        <button data-open="postModal{{article_id}}">
-          <i class="fa-solid fa-square-plus custom-plus"></i>
-        </button>
+      <div class="card-divider article-title headline-wrap">
+        <div class="headline-title-wrap">
+          <h4>
+            <a href={{link}} class="form-link" target="_blank">
+              {{headline}}
+            </a>
+          </h4>
+        </div>
+        <div class="add-post-wrap">
+          <button data-open="postModal{{article_id}}">
+            <i class="fa-solid fa-square-plus custom-plus"></i>
+          </button>
+        </div>
       </div>
       <div class="card-section">
         <p>{{short_description}}</p>
