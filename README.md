@@ -61,5 +61,5 @@ Upon arriving on the landing page... Users are presented with information about 
 
 ## Links
 
-* [Live Link]()
+* [Live Link](https://teamspeak-org.herokuapp.com/)
 * [Git Hub](https://github.com/park-d/team-speak)
