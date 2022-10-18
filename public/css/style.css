@@ -625,5 +625,10 @@ p {
 }
 
 .error-message {
-    color: var(--theme);
+    color: #e5383b;
+    margin-bottom: 8px;
+}
+
+.add-team-button {
+    margin-bottom: 8px;
 }
