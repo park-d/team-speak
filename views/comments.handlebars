@@ -14,7 +14,7 @@
                         </button>
                     </div>
                     <div class="article-post-details">
-                        <p class="post-body"> Posted by: <a href="/teamDashboard/{{username}}"
+                        <p class="post-body"> Posted by: <a href="/teamDashboard/{{postData.user.username}}"
                                 class="form-link">{{postData.user.username}}</a>,
                             {{format_date_time
                             postData.createdAt}}
@@ -40,7 +40,7 @@
                     <div class="card comment-card">
                         <div class="card-section">
                             <p class="comment-body">{{body}}</p>
-                            <p>- {{user.username}}, {{format_date_time createdAt}}</p>
+                            <p>- <a href="/teamDashboard/{{user.username}}" class="form-link">{{user.username}}</a>, {{format_date_time createdAt}}</p>
                         </div>
                     </div>
                     {{/each}}
